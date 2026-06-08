@@ -1,0 +1,109 @@
+Prompt:
+
+Design a modern academic research lab website for:
+
+FIND Lab (Functional Innovations in Nano Devices Laboratory)
+Principal Investigator: Dr. Akhil K. Ramesh
+
+The website should present a serious, research-grade scientific identity while using a subtle anime / Ghibli-inspired visual softness in illustrations and backgrounds, without compromising academic credibility.
+
+🎨 Visual Style Direction (IMPORTANT BALANCE)
+Overall layout: clean, minimal, IEEE/Nature-style academic structure
+Visual tone: soft, hand-drawn, Ghibli-inspired scientific illustrations
+Use anime/Ghibli influence ONLY for:
+Background illustrations (subtle lab environments, abstract nano-world visuals)
+Section dividers (e.g., stylized atomic lattices, spin textures, wave patterns)
+Hero banner artwork (soft futuristic nano-lab aesthetic)
+Avoid:
+Cartoon characters
+Overly cute or fantasy storytelling visuals
+Anything that reduces academic seriousness
+
+Target feel:
+A calm, futuristic research world where nanoscience is visualized like a softly animated physics landscape (not a cartoon lab).
+
+🔬 Core Research Focus (must be emphasized clearly)
+
+Focus areas:
+
+1. Spintronics & 2D Material Heterostructures
+MTJs and spin-dependent transport
+Magnetic multilayers and interface control
+2D materials (MoS₂, WSe₂, graphene stacks)
+Spin–orbit torque phenomena
+2. Interface Engineering in Nanodevices
+Atomic-scale interface control in thin films
+Oxide/metal and van der Waals heterostructures
+Defect, strain, and symmetry engineering
+Structure–property correlations
+3. Flexible Nanoelectronics
+Flexible spintronic and electronic devices
+Strain-dependent transport
+Low-temperature fabrication
+Wearable-compatible device concepts (kept general and scientific)
+4. High-Aspect-Ratio Nanofabrication
+Laser interference lithography
+Nano/micro pattern transfer techniques
+Thin film stacks and lift-off processes
+High-aspect-ratio nanostructures
+🧠 Scientific Philosophy
+Interface-driven physics in nanoscale systems
+Device functionality emerging from materials engineering
+Bridging condensed matter physics and nanoelectronics
+Scalable fabrication of functional devices
+
+Avoid hype language.
+
+👨‍🏫 PI Section
+
+Dr. Akhil K. Ramesh
+Include:
+
+PhD: IIT Delhi + NYCU Taiwan (spintronics, nanofabrication)
+Postdoc: flexible electronics and nanodevices
+Current: ICST, NYCU
+Vision: interface-engineered spintronic and functional nano-device systems
+
+Tone: authoritative academic profile (Nature/IEEE lab style)
+
+🎓 People Section
+PI: Dr. Akhil K. Ramesh
+PhD Student (Fall 2026): Akshay S.
+Placeholder for future PhD and Master’s students
+Indicate active recruitment
+🧪 Recruitment Page
+
+Actively recruiting:
+
+PhD students (Fall 2026)
+Backgrounds: Physics, EE, Materials Science, Nanotechnology
+
+Skills:
+
+Thin film deposition
+Lithography (laser interference, EBL)
+Magnetotransport measurement
+Device fabrication
+
+Include clear contact section.
+
+🧭 Website Structure
+Home
+About
+Research
+People
+Publications
+Facilities
+Join Us
+Contact
+🌌 Hero Section Concept (IMPORTANT)
+
+Hero section should feature:
+
+A Ghibli-inspired abstract nano-world
+glowing lattice structures
+magnetic field lines
+layered 2D material sheets
+Subtle animation or parallax
+Overlay text in clean academic typography:
+“Functional Innovations in Nano Devices”
