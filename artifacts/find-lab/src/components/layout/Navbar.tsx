@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Microscope } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -36,10 +36,12 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center group-hover:bg-accent transition-colors">
-            <Microscope size={20} />
-          </div>
+        <Link href="/" className="flex items-center gap-2 group" data-testid="link-home-logo">
+          <img
+            src="/images/find-lab-logo.png"
+            alt="FIND Lab logo"
+            className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
+          />
           <div className="flex flex-col">
             <span className="font-serif font-bold text-lg leading-none tracking-tight">FIND Lab</span>
             <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">NYCU • ICST</span>
@@ -55,6 +57,7 @@ export function Navbar() {
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-muted ${
                 location === item.href ? "text-primary bg-muted/50" : "text-foreground/80"
               }`}
+              data-testid={`link-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
             >
               {item.label}
             </Link>
@@ -67,6 +70,7 @@ export function Navbar() {
           size="icon"
           className="md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          data-testid="button-mobile-menu"
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
         </Button>
@@ -85,6 +89,7 @@ export function Navbar() {
                   ? "bg-primary text-primary-foreground"
                   : "hover:bg-muted"
               }`}
+              data-testid={`link-mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
             >
               {item.label}
             </Link>
