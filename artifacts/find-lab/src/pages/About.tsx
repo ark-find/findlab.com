@@ -39,7 +39,7 @@ export default function About() {
             <div className="space-y-4">
               <div className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm">ICST, National Yang Ming Chiao Tung University (NYCU), Taiwan</span>
+                <span className="text-sm">International College of Semiconductor Technology (ICST), National Yang Ming Chiao Tung University (NYCU), Taiwan</span>
               </div>
               <div className="flex items-start gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />

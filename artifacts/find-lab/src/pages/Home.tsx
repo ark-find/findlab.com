@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, ChevronRight, Microscope, Layers, Cpu, Minimize2 } from "lucide-react";
+import { ArrowRight, ChevronRight, Zap, Atom, Layers, Cpu, FlaskConical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeroBackground } from "@/components/hero/HeroBackground";
@@ -69,10 +69,11 @@ export default function Home() {
             <h2 className="text-3xl font-serif font-bold mb-6 text-foreground">Welcome to the FIND Lab</h2>
             <div className="w-16 h-1 bg-accent mx-auto mb-8"></div>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Led by Dr. Akhil K. Ramesh at the Institute of Computational Science and Technology (ICST), NYCU, 
+              Led by Dr. Akhil K. Ramesh at the International College of Semiconductor Technology (ICST), NYCU, 
               the FIND Lab is dedicated to interface-engineered spintronic and functional nano-device systems. 
               We explore the fundamental physics of nanoscale interfaces and translate these discoveries into 
-              scalable, functional device architectures.
+              scalable, functional device architectures — operating at the forefront of semiconductor materials 
+              and nanodevice research.
             </p>
           </motion.div>
         </div>
@@ -93,27 +94,32 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {[
               {
-                title: "Spintronics & 2D Materials",
-                desc: "Magnetic tunnel junctions and spin-dependent transport in heterostructures.",
-                icon: Layers
+                title: "Spintronic Devices",
+                desc: "Magnetic tunnel junctions, spin-orbit torque, and 2D material heterostructures.",
+                icon: Zap
+              },
+              {
+                title: "Functional Materials",
+                desc: "Ferroelectric, magnetic, and topological thin films for device functionality.",
+                icon: Atom
               },
               {
                 title: "Interface Engineering",
-                desc: "Atomic-scale interface control in thin film systems and structure-property correlations.",
-                icon: Minimize2
+                desc: "Atomic-scale interface control, defect engineering, and structure–property correlations.",
+                icon: Layers
               },
               {
-                title: "Flexible Nanoelectronics",
-                desc: "Strain-dependent transport phenomena and wearable device concepts.",
+                title: "Flexible Electronics",
+                desc: "Strain-dependent transport and flexible spintronic device architectures.",
                 icon: Cpu
               },
               {
-                title: "Nanofabrication",
-                desc: "Laser interference lithography and high-aspect-ratio patterning.",
-                icon: Microscope
+                title: "Nano Fabrication",
+                desc: "Laser interference lithography and high-aspect-ratio nanostructure patterning.",
+                icon: FlaskConical
               }
             ].map((item, i) => (
               <motion.div

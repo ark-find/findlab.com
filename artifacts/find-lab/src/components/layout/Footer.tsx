@@ -36,7 +36,7 @@ export function Footer() {
           <div>
             <h3 className="font-serif font-semibold text-lg mb-4">Contact</h3>
             <address className="not-italic text-sm text-muted-foreground space-y-2">
-              <p>Institute of Computational Science and Technology (ICST)</p>
+              <p>International College of Semiconductor Technology (ICST)</p>
               <p>National Yang Ming Chiao Tung University (NYCU)</p>
               <p>Taiwan</p>
               <div className="pt-2">
