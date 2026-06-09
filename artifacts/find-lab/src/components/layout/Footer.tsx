@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import { Microscope } from "lucide-react";
 
 export function Footer() {
   return (
@@ -8,9 +7,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded bg-primary text-primary-foreground flex items-center justify-center">
-                <Microscope size={20} />
-              </div>
+              <img
+                src="/images/find-lab-logo.png"
+                alt="FIND Lab logo"
+                className="h-10 w-10 object-contain"
+              />
               <span className="font-serif font-bold text-xl">FIND Lab</span>
             </div>
             <p className="text-muted-foreground max-w-sm">
