@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+  }
+
+  .pub-list {
+    counter-reset: pub-counter 13;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pub-list li {
+    counter-increment: pub-counter -1;
+    padding: 16px 16px 16px 52px;
+    border-bottom: 1px solid #eef0f5;
+    position: relative;
+    transition: background 0.2s;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .pub-list li:hover {
+    background: #f7f8fb;
+    border-radius: 8px;
+  }
+
+  .pub-list li::before {
+    content: counter(pub-counter) ".";
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #c9973a;
+    min-width: 30px;
+    text-align: right;
+  }
+
+  .pub-badge {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+
+    .badge-acs     { background: #1b4f8a; color: #f5c518; }
+  .badge-ieee    { background: #00629b; color: #ffffff; }
+  .badge-iop     { background: #87ceeb; color: #cc0000; font-weight: 900; }
+  .badge-wiley   { background: #ffffff; color: #000000; border: 1.5px solid #cccccc; }
+  .badge-rsc     { background: #e8e832; color: #1a3d6e; }
+  .badge-elsev   { background: #ffffff; color: #ff6c00; border: 1.5px solid #ff6c00; }
+  .badge-nature  { background: #000000; color: #ffffff; letter-spacing: 0.05em; }
+  .badge-science { background: #8b0000; color: #ffffff; letter-spacing: 0.05em; }
+
+  .pub-content { flex: 1; }
+
+  .pub-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #0a1628;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  .pub-title a {
+    color: #0a1628;
+    text-decoration: none;
+    border-bottom: 1px solid #c9973a;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .pub-title a:hover {
+    color: #1e6fa8;
+    border-bottom-color: #1e6fa8;
+  }
+
+  .pub-authors {
+    font-size: 13px;
+    color: #3a4560;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .pub-authors .highlight {
+    font-weight: 700;
+    color: #0a1628;
+    text-decoration: underline;
+    text-decoration-color: #c9973a;
+  }
+
+  .pub-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .pub-journal {
+    font-size: 13px;
+    color: #1e6fa8;
+    font-style: italic;
+  }
+
+  .pub-year {
+    font-size: 11.5px;
+    background: #eef3fb;
+    color: #1e6fa8;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .pub-new {
+    font-size: 10.5px;
+    background: #fff3e0;
+    color: #c9973a;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .pub-count {
+    font-size: 12px;
+    color: #6b7a99;
+    text-align: right;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #eef0f5;
+  }
+</style>
+</head>
+<body>
+
+<ol class="pub-list">
+<!--
+<li>
+  <div class="pub-badge badge-acs">ACS</div>
+  <div class="pub-content">
+    <div class="pub-title">
+      <a href="PASTE_LINK_HERE" target="_blank">
+        Your New Paper Title Here
+      </a>
+    </div>
+    <div class="pub-authors">
+      Author1, Author2, <span class="highlight">Ramesh AK</span>, Author3.
+    </div>
+    <div class="pub-meta">
+      <span class="pub-journal">Journal Name</span>
+      <span class="pub-year">2025</span>
+      <span class="pub-new">NEW</span>
+    </div>
+  </div>
+</li>
+-->
+  <li>
+    <div class="pub-badge badge-acs">ACS</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://pubs.acs.org/doi/full/10.1021/acssusresmgt.5c00641" target="_blank">
+          Facile Single-Step Pyrolysis and Activation of Waste Cotton Textiles for High-Throughput Synthesis of Nanoporous Carbon
+        </a>
+      </div>
+      <div class="pub-authors">
+        Tan WX, Chiang PJ, Lim GY, Tan HT, Seetoh IP, Guo Y, <span class="highlight">Ramesh AK</span>, Lai CQ.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">ACS Sustainable Resource Management</span>
+        <span class="pub-year">2026</span>
+        <span class="pub-new">NEW</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-wiley">Wiley</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/admt.202501276" target="_blank">
+          Stereolithography Additive Manufacturing of Conductive SiOC‐Cu Interpenetrating Phase Composite with Improved Ductility, Thermal Stability, and Corrosion Resistance
+        </a>
+      </div>
+      <div class="pub-authors">
+        Zhou Z, Lim GY, Zhou X, <span class="highlight">Ramesh AK</span>, Wang J, Guo Y, Liu M, Lai CQ.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">Advanced Materials Technologies</span>
+        <span class="pub-year">2026</span>
+        <span class="pub-new"></span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-acs">ACS</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.4c19118" target="_blank">
+          Polydopamine Assisted Electroless Deposition of Strongly Adhesive NiFe Films for Flexible Spintronics
+        </a>
+      </div>
+      <div class="pub-authors">
+        <span class="highlight">Ramesh AK</span>, Chen X, Seetoh IP, Lim GY, Tan WX, Thirunavukkarasu V, Jin T, Lew WS, Lai C.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">ACS Applied Materials &amp; Interfaces</span>
+        <span class="pub-year">2025</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-rsc">RSC</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://pubs.rsc.org/en/content/articlehtml/2024/nr/d4nr00761a" target="_blank">
+          Enhanced Photoelectrochemical Water Splitting using Carbon Cloth Functionalized with ZnO Nanostructures via Polydopamine Assisted Electroless Deposition
+        </a>
+      </div>
+      <div class="pub-authors">
+        Seetoh IP, <span class="highlight">Ramesh AK</span>, Tan WX, Lai CQ.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">Nanoscale</span>
+        <span class="pub-year">2024</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-acs">ACS</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://pubs.acs.org/doi/abs/10.1021/acsnano.2c11955" target="_blank">
+          Gamma-Ray Irradiation Induced Ultrahigh Room-Temperature Ferromagnetism in MoS₂ Sputtered Few-Layered Thin Films
+        </a>
+      </div>
+      <div class="pub-authors">
+        Anbalagan AK, Hu FC, Chan WK, Gandhi AC, Gupta S, Chaudhary M, Chuang KW, <span class="highlight">Ramesh AK</span>, Billo T, Sabbah A, Chiang CY.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">ACS Nano</span>
+        <span class="pub-year">2023</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-ieee">IEEE</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://ieeexplore.ieee.org/abstract/document/9863737" target="_blank">
+          High-Performing Polycrystalline MoS₂-Based Microelectromechanical Piezoresistive Pressure Sensor
+        </a>
+      </div>
+      <div class="pub-authors">
+        Rana V, Gangwar P, <span class="highlight">Ramesh AK</span>, Sharma T, Bhat KN, Nayak MM, Das S, Singh P.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">IEEE Sensors Journal</span>
+        <span class="pub-year">2022</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-iop">IOP</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://iopscience.iop.org/article/10.1088/1361-6528/ac6c32/meta" target="_blank">
+          Biological Sensing Using Anomalous Hall Effect Devices
+        </a>
+      </div>
+      <div class="pub-authors">
+        <span class="highlight">Ramesh AK</span>, Chou YT, Lu MT, Singh P, Tseng YC.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">Nanotechnology</span>
+        <span class="pub-year">2022</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-iop">IOP</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://iopscience.iop.org/article/10.1088/1361-6463/ac55c2/meta" target="_blank">
+          Interface Imperfection Effects on Spin Transfer Torque Switching: An Atomistic Approach
+        </a>
+      </div>
+      <div class="pub-authors">
+        <span class="highlight">Ramesh AK</span>, Cheng CW, Ku TC, Rana V, Gangwar P, Singh P, Tseng YC.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">Journal of Physics D: Applied Physics</span>
+        <span class="pub-year">2022</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-elsev">Else-<br>vier</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S025405842101035X" target="_blank">
+          Investigating the Mechanism of Magnetic Phase Transition Temperature of FeRh Thin Films by Doping Copper Impurities
+        </a>
+      </div>
+      <div class="pub-authors">
+        Chung JC, Kumar Anbalagan A, Fan CL, Liao YH, <span class="highlight">Ramesh AK</span>, Gupta S, Tseng YC, Tai NH, Lee CH.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">Materials Chemistry and Physics</span>
+        <span class="pub-year">2022</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-acs">ACS</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://pubs.acs.org/doi/abs/10.1021/acsaelm.1c00554" target="_blank">
+          Insertion Trade-off Effects on the Spin-Transfer Torque Memory Explored by In Situ X-ray
+        </a>
+      </div>
+      <div class="pub-authors">
+        <span class="highlight">Ramesh AK</span>, Chen KM, Lin YJ, Singh P, Wei JH, Hsin YC, Wu CI, Tseng YC.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">ACS Applied Electronic Materials</span>
+        <span class="pub-year">2021</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-iop">IOP</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://iopscience.iop.org/article/10.1088/1361-6528/ab9970/meta" target="_blank">
+          A Highly Sensitive Wearable Flexible Strain Sensor Based on Polycrystalline MoS₂ Thin Film
+        </a>
+      </div>
+      <div class="pub-authors">
+        Rana V, Gangwar P, Meena JS, <span class="highlight">Ramesh AK</span>, Bhat KN, Das S, Singh P.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">Nanotechnology</span>
+        <span class="pub-year">2020</span>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="pub-badge badge-ieee">IEEE</div>
+    <div class="pub-content">
+      <div class="pub-title">
+        <a href="https://ieeexplore.ieee.org/abstract/document/9091184" target="_blank">
+          Diameter-Dependent Piezoresistive Sensing Performance of Junctionless Gate-All-Around Nanowire FET
+        </a>
+      </div>
+      <div class="pub-authors">
+        Rana V, Ahmad G, <span class="highlight">Ramesh AK</span>, Das S, Singh P.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">IEEE Transactions on Electron Devices</span>
+        <span class="pub-year">2020</span>
+      </div>
+    </div>
+  </li>
+
+</ol>
+
+<div class="pub-count">Total: 12 publications &nbsp;·&nbsp; Last updated: May 2025</div>
+
+</body>
+</html>

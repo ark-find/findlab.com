@@ -1,401 +1,308 @@
-import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
-import { ExternalLink, BookOpen, Quote, Filter, Loader2, AlertCircle } from "lucide-react";
+import { ExternalLink, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 
-const OPENALEX_AUTHOR_ID = "A5041563408";
-const GOOGLE_SCHOLAR_URL = "https://scholar.google.com/citations?user=AkhilKRamesh";
+const GOOGLE_SCHOLAR_URL = "https://scholar.google.com/citations?user=xZBJnUcAAAAJ&hl=en";
 
-interface OpenAlexWork {
-  id: string;
-  title: string;
-  publication_year: number;
-  cited_by_count: number;
-  doi: string | null;
-  type: string;
-  primary_location: {
-    source?: {
-      display_name: string;
-      type: string;
-    };
-    landing_page_url?: string;
-  } | null;
-  authorships: Array<{
-    author: { display_name: string };
-    author_position: string;
-  }>;
-}
+type BadgeStyle = "acs" | "ieee" | "iop" | "wiley" | "rsc" | "elsevier" | "nature" | "science";
 
 interface Publication {
-  id: string;
+  badge: BadgeStyle;
+  badgeLabel: string;
   title: string;
+  url: string;
+  authors: string;
+  piSpan: string;
+  journal: string;
   year: number;
-  citations: number;
-  doi: string | null;
-  type: string;
-  venue: string | null;
-  url: string | null;
-  authors: string[];
-  isPI: boolean;
+  isNew?: boolean;
 }
 
-async function fetchPublications(): Promise<Publication[]> {
-  const res = await fetch(
-    `https://api.openalex.org/works?filter=author.id:${OPENALEX_AUTHOR_ID}&select=id,title,authorships,publication_year,primary_location,cited_by_count,doi,type&sort=publication_year:desc&per_page=50&mailto=findlab@nycu.edu.tw`
+const publications: Publication[] = [
+  {
+    badge: "ieee",
+    badgeLabel: "IEEE",
+    title: "Interface-Engineered STT-MRAM for Device-to-Device Variation-Aware, Energy-Efficient, and Reliable Computing-in-Memory Arrays",
+    url: "https://doi.org/10.1109/ted.2026.3692177",
+    authors: "Wu ZY, Ramesh AK, Bhukya VN, Wei JH, Sheu SS, Hsin YC, Tseng YC.",
+    piSpan: "Ramesh AK",
+    journal: "IEEE Transactions on Electron Devices",
+    year: 2026,
+    isNew: true,
+  },
+  {
+    badge: "acs",
+    badgeLabel: "ACS",
+    title: "Facile Single-Step Pyrolysis and Activation of Waste Cotton Textiles for High-Throughput Synthesis of Nanoporous Carbon",
+    url: "https://pubs.acs.org/doi/full/10.1021/acssusresmgt.5c00641",
+    authors: "Tan WX, Chiang PJ, Lim GY, Tan HT, Seetoh IP, Guo Y, Ramesh AK, Lai CQ.",
+    piSpan: "Ramesh AK",
+    journal: "ACS Sustainable Resource Management",
+    year: 2026,
+    isNew: true,
+  },
+  {
+    badge: "wiley",
+    badgeLabel: "Wiley",
+    title: "Stereolithography Additive Manufacturing of Conductive SiOC‐Cu Interpenetrating Phase Composite with Improved Ductility, Thermal Stability, and Corrosion Resistance",
+    url: "https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/admt.202501276",
+    authors: "Zhou Z, Lim GY, Zhou X, Ramesh AK, Wang J, Guo Y, Liu M, Lai CQ.",
+    piSpan: "Ramesh AK",
+    journal: "Advanced Materials Technologies",
+    year: 2026,
+  },
+  {
+    badge: "acs",
+    badgeLabel: "ACS",
+    title: "Polydopamine Assisted Electroless Deposition of Strongly Adhesive NiFe Films for Flexible Spintronics",
+    url: "https://pubs.acs.org/doi/abs/10.1021/acsami.4c19118",
+    authors: "Ramesh AK, Chen X, Seetoh IP, Lim GY, Tan WX, Thirunavukkarasu V, Jin T, Lew WS, Lai C.",
+    piSpan: "Ramesh AK",
+    journal: "ACS Applied Materials & Interfaces",
+    year: 2025,
+  },
+  {
+    badge: "rsc",
+    badgeLabel: "RSC",
+    title: "Enhanced Photoelectrochemical Water Splitting using Carbon Cloth Functionalized with ZnO Nanostructures via Polydopamine Assisted Electroless Deposition",
+    url: "https://pubs.rsc.org/en/content/articlehtml/2024/nr/d4nr00761a",
+    authors: "Seetoh IP, Ramesh AK, Tan WX, Lai CQ.",
+    piSpan: "Ramesh AK",
+    journal: "Nanoscale",
+    year: 2024,
+  },
+  {
+    badge: "acs",
+    badgeLabel: "ACS",
+    title: "Gamma-Ray Irradiation Induced Ultrahigh Room-Temperature Ferromagnetism in MoS₂ Sputtered Few-Layered Thin Films",
+    url: "https://pubs.acs.org/doi/abs/10.1021/acsnano.2c11955",
+    authors: "Anbalagan AK, Hu FC, Chan WK, Gandhi AC, Gupta S, Chaudhary M, Chuang KW, Ramesh AK, Billo T, Sabbah A, Chiang CY.",
+    piSpan: "Ramesh AK",
+    journal: "ACS Nano",
+    year: 2023,
+  },
+  {
+    badge: "ieee",
+    badgeLabel: "IEEE",
+    title: "High-Performing Polycrystalline MoS₂-Based Microelectromechanical Piezoresistive Pressure Sensor",
+    url: "https://ieeexplore.ieee.org/abstract/document/9863737",
+    authors: "Rana V, Gangwar P, Ramesh AK, Sharma T, Bhat KN, Nayak MM, Das S, Singh P.",
+    piSpan: "Ramesh AK",
+    journal: "IEEE Sensors Journal",
+    year: 2022,
+  },
+  {
+    badge: "iop",
+    badgeLabel: "IOP",
+    title: "Biological Sensing Using Anomalous Hall Effect Devices",
+    url: "https://iopscience.iop.org/article/10.1088/1361-6528/ac6c32/meta",
+    authors: "Ramesh AK, Chou YT, Lu MT, Singh P, Tseng YC.",
+    piSpan: "Ramesh AK",
+    journal: "Nanotechnology",
+    year: 2022,
+  },
+  {
+    badge: "iop",
+    badgeLabel: "IOP",
+    title: "Interface Imperfection Effects on Spin Transfer Torque Switching: An Atomistic Approach",
+    url: "https://iopscience.iop.org/article/10.1088/1361-6463/ac55c2/meta",
+    authors: "Ramesh AK, Cheng CW, Ku TC, Rana V, Gangwar P, Singh P, Tseng YC.",
+    piSpan: "Ramesh AK",
+    journal: "Journal of Physics D: Applied Physics",
+    year: 2022,
+  },
+  {
+    badge: "elsevier",
+    badgeLabel: "Elsevier",
+    title: "Investigating the Mechanism of Magnetic Phase Transition Temperature of FeRh Thin Films by Doping Copper Impurities",
+    url: "https://www.sciencedirect.com/science/article/abs/pii/S025405842101035X",
+    authors: "Chung JC, Kumar Anbalagan A, Fan CL, Liao YH, Ramesh AK, Gupta S, Tseng YC, Tai NH, Lee CH.",
+    piSpan: "Ramesh AK",
+    journal: "Materials Chemistry and Physics",
+    year: 2021,
+  },
+  {
+    badge: "acs",
+    badgeLabel: "ACS",
+    title: "Insertion Trade-off Effects on the Spin-Transfer Torque Memory Explored by In Situ X-ray",
+    url: "https://pubs.acs.org/doi/abs/10.1021/acsaelm.1c00554",
+    authors: "Ramesh AK, Chen KM, Lin YJ, Singh P, Wei JH, Hsin YC, Wu CI, Tseng YC.",
+    piSpan: "Ramesh AK",
+    journal: "ACS Applied Electronic Materials",
+    year: 2021,
+  },
+  {
+    badge: "iop",
+    badgeLabel: "IOP",
+    title: "A Highly Sensitive Wearable Flexible Strain Sensor Based on Polycrystalline MoS₂ Thin Film",
+    url: "https://iopscience.iop.org/article/10.1088/1361-6528/ab9970/meta",
+    authors: "Rana V, Gangwar P, Meena JS, Ramesh AK, Bhat KN, Das S, Singh P.",
+    piSpan: "Ramesh AK",
+    journal: "Nanotechnology",
+    year: 2020,
+  },
+  {
+    badge: "ieee",
+    badgeLabel: "IEEE",
+    title: "Diameter-Dependent Piezoresistive Sensing Performance of Junctionless Gate-All-Around Nanowire FET",
+    url: "https://ieeexplore.ieee.org/abstract/document/9091184",
+    authors: "Rana V, Ahmad G, Ramesh AK, Das S, Singh P.",
+    piSpan: "Ramesh AK",
+    journal: "IEEE Transactions on Electron Devices",
+    year: 2020,
+  },
+];
+
+const badgeClasses: Record<BadgeStyle, string> = {
+  acs:      "bg-[#1b4f8a] text-[#f5c518]",
+  ieee:     "bg-[#00629b] text-white",
+  iop:      "bg-[#87ceeb] text-[#cc0000] font-black",
+  wiley:    "bg-white text-black border border-gray-300",
+  rsc:      "bg-[#e8e832] text-[#1a3d6e]",
+  elsevier: "bg-white text-[#ff6c00] border border-[#ff6c00]",
+  nature:   "bg-black text-white",
+  science:  "bg-[#8b0000] text-white",
+};
+
+function renderAuthors(authors: string, piSpan: string) {
+  const parts = authors.split(piSpan);
+  return (
+    <>
+      {parts[0]}
+      <span className="font-bold text-[#0a1628] underline decoration-[#c9973a]">{piSpan}</span>
+      {parts[1]}
+    </>
   );
-  if (!res.ok) throw new Error("Failed to fetch publications");
-  const data = await res.json();
-
-  return (data.results as OpenAlexWork[]).map((w) => ({
-    id: w.id,
-    title: w.title,
-    year: w.publication_year,
-    citations: w.cited_by_count,
-    doi: w.doi ?? null,
-    type: w.type,
-    venue: w.primary_location?.source?.display_name ?? null,
-    url: w.doi ?? w.primary_location?.landing_page_url ?? null,
-    authors: w.authorships?.map((a) => a.author?.display_name) ?? [],
-    isPI: w.authorships?.some(
-      (a) =>
-        a.author?.display_name?.toLowerCase().includes("akhil") &&
-        a.author?.display_name?.toLowerCase().includes("ramesh")
-    ) ?? false,
-  }));
-}
-
-function formatAuthors(authors: string[], highlight = "Akhil K. Ramesh"): string {
-  return authors
-    .map((name) => {
-      const parts = name.split(" ");
-      if (parts.length < 2) return name;
-      const last = parts[parts.length - 1];
-      const initials = parts
-        .slice(0, -1)
-        .map((p) => p[0] + ".")
-        .join(" ");
-      return `${initials} ${last}`;
-    })
-    .join(", ");
-}
-
-function typeLabel(type: string): string {
-  switch (type) {
-    case "article": return "Journal Article";
-    case "preprint": return "Preprint";
-    case "book-chapter": return "Book Chapter";
-    case "conference-paper": return "Conference Paper";
-    case "proceedings-article": return "Conference Paper";
-    default: return type.charAt(0).toUpperCase() + type.slice(1);
-  }
-}
-
-function typeBadgeVariant(type: string): "default" | "secondary" | "outline" {
-  if (type === "article") return "default";
-  if (type === "preprint") return "secondary";
-  return "outline";
 }
 
 export default function Publications() {
-  const [yearFilter, setYearFilter] = useState<number | null>(null);
-  const [typeFilter, setTypeFilter] = useState<string | null>(null);
-
-  const { data: publications, isLoading, isError } = useQuery({
-    queryKey: ["publications", OPENALEX_AUTHOR_ID],
-    queryFn: fetchPublications,
-  });
-
-  const years = useMemo(() => {
-    if (!publications) return [];
-    return [...new Set(publications.map((p) => p.year))].sort((a, b) => b - a);
-  }, [publications]);
-
-  const types = useMemo(() => {
-    if (!publications) return [];
-    return [...new Set(publications.map((p) => p.type))];
-  }, [publications]);
-
-  const filtered = useMemo(() => {
-    if (!publications) return [];
-    return publications.filter((p) => {
-      if (yearFilter && p.year !== yearFilter) return false;
-      if (typeFilter && p.type !== typeFilter) return false;
-      return true;
-    });
-  }, [publications, yearFilter, typeFilter]);
-
-  const grouped = useMemo(() => {
-    const map = new Map<number, Publication[]>();
-    for (const p of filtered) {
-      if (!map.has(p.year)) map.set(p.year, []);
-      map.get(p.year)!.push(p);
-    }
-    return [...map.entries()].sort((a, b) => b[0] - a[0]);
-  }, [filtered]);
-
-  const totalCitations = useMemo(
-    () => publications?.reduce((sum, p) => sum + p.citations, 0) ?? 0,
-    [publications]
-  );
+  const total = publications.length;
 
   return (
     <div className="min-h-screen bg-background py-16 md:py-24">
       <div className="container mx-auto px-4 max-w-4xl">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-10"
         >
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">Publications</h1>
-          <div className="w-20 h-1 bg-accent mb-8"></div>
+          <div className="w-20 h-1 bg-accent mb-6"></div>
 
-          {/* Stats + Scholar link */}
-          {!isLoading && !isError && publications && (
-            <div className="flex flex-wrap items-center gap-6 mb-8">
-              <div className="text-center">
-                <p className="text-3xl font-serif font-bold text-primary">{publications.length}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Publications</p>
-              </div>
-              <div className="w-px h-10 bg-border hidden sm:block"></div>
-              <div className="text-center">
-                <p className="text-3xl font-serif font-bold text-primary">{totalCitations}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Total Citations</p>
-              </div>
-              <div className="w-px h-10 bg-border hidden sm:block"></div>
-              <div className="text-center">
-                <p className="text-3xl font-serif font-bold text-primary">
-                  {Math.max(...publications.map((p) => p.year))}
-                </p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Latest Work</p>
-              </div>
-              <div className="ml-auto">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="gap-2"
-                  asChild
-                  data-testid="button-google-scholar"
-                >
-                  <a href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer">
-                    <BookOpen size={15} />
-                    Google Scholar
-                    <ExternalLink size={13} />
-                  </a>
-                </Button>
-              </div>
-            </div>
-          )}
-
-          <p className="text-sm text-muted-foreground">
-            Publication data sourced live from{" "}
-            <a
-              href={`https://openalex.org/authors/${OPENALEX_AUTHOR_ID}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground">
+              PI name (<span className="font-bold text-foreground underline decoration-[#c9973a]">Ramesh AK</span>) is underlined in amber throughout.
+            </p>
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2 shrink-0"
+              asChild
+              data-testid="button-google-scholar"
             >
-              OpenAlex
-            </a>
-            . For the full up-to-date record, see Dr. Ramesh's Google Scholar profile.
-          </p>
-        </motion.div>
-
-        {/* Loading */}
-        {isLoading && (
-          <div className="flex flex-col items-center justify-center py-24 gap-4 text-muted-foreground">
-            <Loader2 className="w-8 h-8 animate-spin text-primary" />
-            <p className="text-sm">Fetching publications from OpenAlex…</p>
-          </div>
-        )}
-
-        {/* Error */}
-        {isError && (
-          <Card className="border-destructive/50 bg-destructive/5">
-            <CardContent className="p-6 flex items-start gap-4">
-              <AlertCircle className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
-              <div>
-                <p className="font-medium text-foreground mb-1">Could not load publications</p>
-                <p className="text-sm text-muted-foreground mb-4">
-                  The OpenAlex API may be temporarily unavailable. Please check Dr. Ramesh's Google Scholar
-                  for the current publication list.
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <a href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer">
-                    Google Scholar <ExternalLink size={13} className="ml-2" />
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* Filters */}
-        {!isLoading && !isError && publications && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="mb-10"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <Filter size={15} className="text-muted-foreground" />
-              <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Filter</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <Button
-                variant={yearFilter === null && typeFilter === null ? "default" : "outline"}
-                size="sm"
-                onClick={() => { setYearFilter(null); setTypeFilter(null); }}
-                data-testid="filter-all"
-              >
-                All ({publications.length})
-              </Button>
-              <div className="w-px h-8 bg-border mx-1 self-center hidden sm:block"></div>
-              {years.map((year) => (
-                <Button
-                  key={year}
-                  variant={yearFilter === year ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => { setYearFilter(yearFilter === year ? null : year); setTypeFilter(null); }}
-                  data-testid={`filter-year-${year}`}
-                >
-                  {year}
-                </Button>
-              ))}
-              <div className="w-px h-8 bg-border mx-1 self-center hidden sm:block"></div>
-              {types.filter(t => t !== "article").map((type) => (
-                <Button
-                  key={type}
-                  variant={typeFilter === type ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => { setTypeFilter(typeFilter === type ? null : type); setYearFilter(null); }}
-                  data-testid={`filter-type-${type}`}
-                >
-                  {typeLabel(type)}
-                </Button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-
-        {/* Publication List grouped by year */}
-        {!isLoading && !isError && grouped.length > 0 && (
-          <div className="space-y-12">
-            {grouped.map(([year, pubs], gi) => (
-              <motion.div
-                key={year}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: gi * 0.05 }}
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <h2 className="text-2xl font-serif font-bold text-foreground">{year}</h2>
-                  <div className="flex-1 h-px bg-border"></div>
-                  <span className="text-xs text-muted-foreground">{pubs.length} paper{pubs.length !== 1 ? "s" : ""}</span>
-                </div>
-
-                <div className="space-y-4">
-                  {pubs.map((pub, pi) => (
-                    <motion.div
-                      key={pub.id}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: pi * 0.05 }}
-                      data-testid={`publication-card-${pub.id.split("/").pop()}`}
-                    >
-                      <Card className="border-border/50 hover:border-primary/30 hover:shadow-sm transition-all group">
-                        <CardContent className="p-6">
-                          <div className="flex items-start justify-between gap-4">
-                            <div className="flex-1 min-w-0">
-                              <div className="flex flex-wrap items-center gap-2 mb-2">
-                                <Badge variant={typeBadgeVariant(pub.type)} className="text-xs font-normal">
-                                  {typeLabel(pub.type)}
-                                </Badge>
-                                {pub.citations > 0 && (
-                                  <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                                    <Quote size={11} />
-                                    {pub.citations} citation{pub.citations !== 1 ? "s" : ""}
-                                  </span>
-                                )}
-                              </div>
-
-                              <h3 className="font-semibold text-base text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">
-                                {pub.url ? (
-                                  <a
-                                    href={pub.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:underline"
-                                    data-testid={`link-publication-${pub.id.split("/").pop()}`}
-                                  >
-                                    {pub.title}
-                                  </a>
-                                ) : (
-                                  pub.title
-                                )}
-                              </h3>
-
-                              <p className="text-sm text-muted-foreground mb-1 leading-relaxed">
-                                {pub.authors.map((name, i) => {
-                                  const isPI =
-                                    name.toLowerCase().includes("akhil") &&
-                                    name.toLowerCase().includes("ramesh");
-                                  return (
-                                    <span key={i}>
-                                      {i > 0 && ", "}
-                                      {isPI ? (
-                                        <strong className="text-foreground font-semibold">{name}</strong>
-                                      ) : (
-                                        name
-                                      )}
-                                    </span>
-                                  );
-                                })}
-                              </p>
-
-                              {pub.venue && (
-                                <p className="text-sm font-medium text-primary/80 italic">{pub.venue}</p>
-                              )}
-                            </div>
-
-                            {pub.url && (
-                              <a
-                                href={pub.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="shrink-0 text-muted-foreground hover:text-primary transition-colors mt-1"
-                                aria-label="Open publication"
-                                data-testid={`icon-link-${pub.id.split("/").pop()}`}
-                              >
-                                <ExternalLink size={16} />
-                              </a>
-                            )}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        )}
-
-        {!isLoading && !isError && filtered.length === 0 && publications && (
-          <div className="text-center py-16 text-muted-foreground">
-            <p className="text-lg">No publications match the selected filter.</p>
-            <Button variant="link" onClick={() => { setYearFilter(null); setTypeFilter(null); }} className="mt-2">
-              Clear filters
+              <a href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer">
+                <BookOpen size={15} />
+                Google Scholar
+                <ExternalLink size={13} />
+              </a>
             </Button>
           </div>
-        )}
+        </motion.div>
+
+        {/* Publication List */}
+        <motion.ol
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="list-none p-0 m-0 divide-y divide-border/60"
+          data-testid="publications-list"
+        >
+          {publications.map((pub, index) => {
+            const number = total - index;
+            return (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.35, delay: Math.min(index * 0.04, 0.3) }}
+                className="group relative flex items-start gap-4 py-5 px-2 hover:bg-muted/40 rounded-lg transition-colors"
+                data-testid={`publication-item-${number}`}
+              >
+                {/* Number */}
+                <span
+                  className="absolute left-2 top-[22px] text-base font-bold min-w-[26px] text-right select-none"
+                  style={{ color: "#c9973a" }}
+                  aria-hidden="true"
+                >
+                  {number}.
+                </span>
+
+                {/* Publisher badge */}
+                <div
+                  className={`shrink-0 w-14 h-14 rounded-lg flex items-center justify-center text-[11px] font-extrabold text-center leading-tight tracking-wide ml-8 mt-0.5 ${badgeClasses[pub.badge]}`}
+                  aria-label={`Published in ${pub.badgeLabel}`}
+                >
+                  {pub.badgeLabel}
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="text-[14.5px] font-bold text-[#0a1628] dark:text-foreground leading-snug mb-1.5">
+                    <a
+                      href={pub.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-b border-[#c9973a] hover:text-[#1e6fa8] hover:border-[#1e6fa8] transition-colors"
+                      data-testid={`link-publication-${number}`}
+                    >
+                      {pub.title}
+                    </a>
+                  </div>
+
+                  <div className="text-[13px] text-[#3a4560] dark:text-muted-foreground mb-2 leading-relaxed">
+                    {renderAuthors(pub.authors, pub.piSpan)}
+                  </div>
+
+                  <div className="flex items-center flex-wrap gap-2">
+                    <span className="text-[13px] text-[#1e6fa8] italic">{pub.journal}</span>
+                    <span className="text-[11.5px] bg-[#eef3fb] text-[#1e6fa8] dark:bg-primary/10 dark:text-primary px-2.5 py-0.5 rounded-full font-semibold not-italic">
+                      {pub.year}
+                    </span>
+                    {pub.isNew && (
+                      <span className="text-[10.5px] bg-[#fff3e0] text-[#c9973a] dark:bg-amber-900/30 dark:text-amber-400 px-2.5 py-0.5 rounded-full font-bold tracking-wider uppercase">
+                        NEW
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </motion.li>
+            );
+          })}
+        </motion.ol>
+
+        {/* Footer count */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="mt-8 pt-5 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground"
+        >
+          <span>Total: {total} publications</span>
+          <a
+            href={GOOGLE_SCHOLAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors flex items-center gap-1"
+            data-testid="link-scholar-footer"
+          >
+            View on Google Scholar <ExternalLink size={11} className="inline" />
+          </a>
+        </motion.div>
       </div>
     </div>
   );
