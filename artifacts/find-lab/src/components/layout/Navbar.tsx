@@ -44,7 +44,8 @@ export function Navbar() {
           />
           <div className="flex flex-col">
             <span className="font-serif font-bold text-lg leading-none tracking-tight">FIND Lab</span>
-            <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">International College of Semiconductor Technology · NYCU</span>
+            <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">ICST
+            NYCU</span>
           </div>
         </Link>
 
@@ -75,7 +76,6 @@ export function Navbar() {
           {isMobileMenuOpen ? <X /> : <Menu />}
         </Button>
       </div>
-
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background border-b shadow-lg absolute top-16 left-0 w-full flex flex-col p-4 space-y-2">
