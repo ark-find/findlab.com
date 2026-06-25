@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ChevronRight } from "lucide-react";
+import { CheckCircle2, ChevronRight, Mail } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -105,13 +105,21 @@ export default function Join() {
           </p>
           <div className="bg-background/10 backdrop-blur border border-white/20 rounded-lg p-6 max-w-xl mx-auto">
             <h3 className="font-semibold text-lg mb-2">How to Apply</h3>
-            <p className="text-sm text-primary-foreground/80 mb-6">
-              Please reach out via the contact form or direct email. Include your CV, 
-              a brief statement of research interests, and transcripts.
+            <p className="text-sm text-primary-foreground/80 mb-4">
+              Send your CV, a brief statement of research interests, and transcripts directly to:
             </p>
-            <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto">
-              <Link href="/contact">Contact to Apply</Link>
-            </Button>
+            <a
+              href="mailto:ark.st08@nycu.edu.tw"
+              className="inline-flex items-center gap-2 text-primary-foreground font-semibold text-base hover:underline mb-6"
+            >
+              <Mail className="w-4 h-4 shrink-0" />
+              ark.st08@nycu.edu.tw
+            </a>
+            <div className="mt-2">
+              <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto">
+                <Link href="/contact">Or use the contact form</Link>
+              </Button>
+            </div>
           </div>
         </motion.div>
       </div>
