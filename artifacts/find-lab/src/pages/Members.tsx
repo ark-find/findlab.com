@@ -146,6 +146,29 @@ export default function Members() {
                 </CardContent>
               </Card>
             </motion.div>
+
+            {/* Open position card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Link href="/join" className="block h-full group">
+                <Card className="overflow-hidden border-dashed border-2 border-accent/40 bg-accent/5 hover:border-accent hover:bg-accent/10 transition-all h-full cursor-pointer">
+                  <div className="aspect-square flex flex-col items-center justify-center gap-3">
+                    <UserPlus className="w-10 h-10 text-accent/50 group-hover:text-accent transition-colors" />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="font-serif font-bold text-lg text-foreground">You?</h3>
+                    <p className="text-accent text-sm font-medium mb-2">Open Position</p>
+                    <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors">
+                      We're recruiting — apply now →
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            </motion.div>
           </div>
         </section>
 
