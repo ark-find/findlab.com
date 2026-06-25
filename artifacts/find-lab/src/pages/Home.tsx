@@ -28,9 +28,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Functional Innovations in Nano Devices
-          </motion.h1>
+          >Functional Innovations in Nano Devices (FIND) Lab</motion.h1>
           
           <motion.p
             className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow"
@@ -56,7 +54,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Lab Intro */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-5xl text-center">
@@ -78,7 +75,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Lab Vision */}
       <section className="py-16 bg-secondary/40 border-y border-border/40">
         <div className="container mx-auto px-4 max-w-3xl text-center">
@@ -97,7 +93,6 @@ export default function Home() {
           </motion.blockquote>
         </div>
       </section>
-
       {/* Research Highlights */}
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
@@ -172,7 +167,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* CTA / Join */}
       <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/images/hero-bg.png')] bg-cover bg-center mix-blend-overlay"></div>
