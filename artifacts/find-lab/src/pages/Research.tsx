@@ -13,7 +13,7 @@ const researchAreas = [
       "2D materials: MoS₂, WSe₂, graphene heterostructures",
       "Spin–orbit torque phenomena and current-induced switching"
     ],
-    image: "/images/spintronics.png"
+    image: "/images/research-spintronics.png"
   },
   {
     id: "functional-materials",
@@ -26,7 +26,7 @@ const researchAreas = [
       "Structure–property correlations in functional oxides",
       "Phase-change and strongly correlated electron systems"
     ],
-    image: "/images/hero-bg.png"
+    image: "/images/research-hall.png"
   },
   {
     id: "interface-engineering",
@@ -39,7 +39,7 @@ const researchAreas = [
       "Oxide/metal and van der Waals heterostructures",
       "Interface-driven emergent phenomena and device implications"
     ],
-    image: "/images/nanoelectronics.png"
+    image: "/images/research-mtj.png"
   },
   {
     id: "flexible-electronics",
@@ -52,7 +52,7 @@ const researchAreas = [
       "Low-temperature fabrication on flexible substrates",
       "Wearable-compatible device concepts (research-grade)"
     ],
-    image: "/images/spintronics.png"
+    image: "/images/research-flexible.png"
   },
   {
     id: "nano-fabrication",
@@ -65,7 +65,7 @@ const researchAreas = [
       "Thin film stacks and lift-off processes",
       "High-aspect-ratio nanostructure fabrication"
     ],
-    image: "/images/hero-bg.png"
+    image: "/images/research-nanofab.png"
   }
 ];
 
