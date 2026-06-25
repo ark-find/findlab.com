@@ -39,7 +39,7 @@ export default function Facilities() {
           <div className="w-20 h-1 bg-accent mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl">
             The FIND Lab leverages state-of-the-art fabrication and characterization facilities 
-            at the Institute of Computational Science and Technology (ICST), NYCU.
+            at the International College of Semiconductor Technology (ICST), NYCU.
           </p>
           
           <div className="mt-6 inline-block bg-muted text-muted-foreground px-4 py-2 rounded text-sm border border-border">

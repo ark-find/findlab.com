@@ -21,7 +21,7 @@ export function ScholarlyDossier() {
           <div className="max-w-xl">
             <span className="text-amber uppercase tracking-widest text-xs md:text-sm font-source font-semibold mb-4 block">Director & Principal Investigator</span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">Dr. Akhil K. Ramesh</h1>
-            <p className="text-xl md:text-2xl text-[#b0b8c4] italic mt-2 font-source font-light">FIND Lab at ICST, NYCU Taiwan</p>
+            <p className="text-xl md:text-2xl text-[#b0b8c4] italic mt-2 font-source font-light">FIND Lab, International College of Semiconductor Technology (ICST), NYCU Taiwan</p>
             
             <div className="mt-12 md:mt-16 border-l-2 border-amber pl-6">
               <p className="text-lg md:text-xl font-source font-light italic leading-relaxed text-[#e2e6eb]">
@@ -61,7 +61,7 @@ export function ScholarlyDossier() {
                   <div className="absolute w-2 h-2 rounded-full bg-amber -left-[4.5px] top-2 shadow-[0_0_0_4px_#faf8f3]"></div>
                   <span className="text-sm font-bold text-amber uppercase tracking-wider block mb-1">Present</span>
                   <h3 className="font-playfair font-bold text-lg text-navy leading-snug">Director, FIND Lab</h3>
-                  <p className="text-sm text-gray-600 mt-1 leading-relaxed">ICST, National Yang Ming Chiao Tung University (NYCU), Taiwan</p>
+                  <p className="text-sm text-gray-600 mt-1 leading-relaxed">International College of Semiconductor Technology (ICST), National Yang Ming Chiao Tung University (NYCU), Taiwan</p>
                 </div>
 
                 {/* Item */}

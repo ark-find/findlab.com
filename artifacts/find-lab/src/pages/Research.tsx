@@ -84,7 +84,7 @@ export default function Research() {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Our research bridges condensed matter physics and applied nanoelectronics through 
             precise engineering of functional interfaces, materials, and device architectures 
-            within the semiconductor technology ecosystem at ICST, NYCU.
+            within the semiconductor technology ecosystem at the International College of Semiconductor Technology (ICST), NYCU.
           </p>
         </motion.div>
 

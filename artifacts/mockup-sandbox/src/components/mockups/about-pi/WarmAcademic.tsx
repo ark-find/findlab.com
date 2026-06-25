@@ -36,7 +36,7 @@ export function WarmAcademic() {
                 Dr. Akhil K. Ramesh
               </h1>
               <p className="text-lg md:text-xl text-[#6b8f71] font-medium mb-6">
-                Director of FIND Lab • ICST, NYCU Taiwan
+                Director of FIND Lab • International College of Semiconductor Technology (ICST), NYCU Taiwan
               </p>
               
               <div className="flex flex-wrap justify-center md:justify-start gap-3">

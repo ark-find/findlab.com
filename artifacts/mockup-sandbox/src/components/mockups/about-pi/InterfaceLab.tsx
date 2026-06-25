@@ -55,7 +55,7 @@ export function InterfaceLab() {
             <p className="text-xl md:text-2xl text-slate-400 font-light flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
               <span>Director of FIND Lab</span>
               <span className="hidden md:block text-[#00c3ff]/50">|</span>
-              <span className="text-slate-500">ICST, NYCU Taiwan</span>
+              <span className="text-slate-500">International College of Semiconductor Technology (ICST), NYCU Taiwan</span>
             </p>
           </div>
         </header>

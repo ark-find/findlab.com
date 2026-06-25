@@ -50,7 +50,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-medium text-foreground">Department</h3>
                     <p className="text-muted-foreground text-sm mt-1">
-                      Institute of Computational Science and Technology (ICST)
+                      International College of Semiconductor Technology (ICST)
                     </p>
                   </div>
                 </div>
