@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, BookOpen } from "lucide-react";
+import { ExternalLink, BookOpen, Mic } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const GOOGLE_SCHOLAR_URL = "https://scholar.google.com/citations?user=xZBJnUcAAAAJ&hl=en";
 
@@ -16,6 +18,14 @@ interface Publication {
   journal: string;
   year: number;
   isNew?: boolean;
+}
+
+interface Talk {
+  title: string;
+  event: string;
+  location: string;
+  year: number;
+  type: "invited" | "contributed" | "keynote";
 }
 
 const publications: Publication[] = [
@@ -153,6 +163,8 @@ const publications: Publication[] = [
   },
 ];
 
+const talks: Talk[] = [];
+
 const badgeClasses: Record<BadgeStyle, string> = {
   acs:      "bg-[#1b4f8a] text-[#f5c518]",
   ieee:     "bg-[#00629b] text-white",
@@ -162,6 +174,12 @@ const badgeClasses: Record<BadgeStyle, string> = {
   elsevier: "bg-white text-[#ff6c00] border border-[#ff6c00]",
   nature:   "bg-black text-white",
   science:  "bg-[#8b0000] text-white",
+};
+
+const talkTypeBadge: Record<Talk["type"], string> = {
+  invited:    "bg-[#eef3fb] text-[#1e6fa8]",
+  contributed: "bg-[#f0fdf4] text-[#16a34a]",
+  keynote:    "bg-[#fff3e0] text-[#c9973a]",
 };
 
 function renderAuthors(authors: string, piSpan: string) {
@@ -189,7 +207,7 @@ export default function Publications() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">Publications</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">Research Contributions</h1>
           <div className="w-20 h-1 bg-accent mb-6"></div>
 
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -212,96 +230,177 @@ export default function Publications() {
           </div>
         </motion.div>
 
-        {/* Publication List */}
-        <motion.ol
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="list-none p-0 m-0 divide-y divide-border/60"
-          data-testid="publications-list"
-        >
-          {publications.map((pub, index) => {
-            const number = total - index;
-            return (
-              <motion.li
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.35, delay: Math.min(index * 0.04, 0.3) }}
-                className="group relative flex items-start gap-4 py-5 px-2 hover:bg-muted/40 rounded-lg transition-colors"
-                data-testid={`publication-item-${number}`}
-              >
-                {/* Number */}
-                <span
-                  className="absolute left-2 top-[22px] text-base font-bold min-w-[26px] text-right select-none"
-                  style={{ color: "#c9973a" }}
-                  aria-hidden="true"
-                >
-                  {number}.
-                </span>
-
-                {/* Publisher badge */}
-                <div
-                  className={`shrink-0 w-14 h-14 rounded-lg flex items-center justify-center text-[11px] font-extrabold text-center leading-tight tracking-wide ml-8 mt-0.5 ${badgeClasses[pub.badge]}`}
-                  aria-label={`Published in ${pub.badgeLabel}`}
-                >
-                  {pub.badgeLabel}
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="text-[14.5px] font-bold text-[#0a1628] dark:text-foreground leading-snug mb-1.5">
-                    <a
-                      href={pub.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="border-b border-[#c9973a] hover:text-[#1e6fa8] hover:border-[#1e6fa8] transition-colors"
-                      data-testid={`link-publication-${number}`}
-                    >
-                      {pub.title}
-                    </a>
-                  </div>
-
-                  <div className="text-[13px] text-[#3a4560] dark:text-muted-foreground mb-2 leading-relaxed">
-                    {renderAuthors(pub.authors, pub.piSpan)}
-                  </div>
-
-                  <div className="flex items-center flex-wrap gap-2">
-                    <span className="text-[13px] text-[#1e6fa8] italic">{pub.journal}</span>
-                    <span className="text-[11.5px] bg-[#eef3fb] text-[#1e6fa8] dark:bg-primary/10 dark:text-primary px-2.5 py-0.5 rounded-full font-semibold not-italic">
-                      {pub.year}
-                    </span>
-                    {pub.isNew && (
-                      <span className="text-[10.5px] bg-[#fff3e0] text-[#c9973a] dark:bg-amber-900/30 dark:text-amber-400 px-2.5 py-0.5 rounded-full font-bold tracking-wider uppercase">
-                        NEW
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </motion.li>
-            );
-          })}
-        </motion.ol>
-
-        {/* Footer count */}
+        {/* Tabs */}
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="mt-8 pt-5 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground"
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
         >
-          <span>Total: {total} publications</span>
-          <a
-            href={GOOGLE_SCHOLAR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary transition-colors flex items-center gap-1"
-            data-testid="link-scholar-footer"
-          >
-            View on Google Scholar <ExternalLink size={11} className="inline" />
-          </a>
+          <Tabs defaultValue="journals">
+            <TabsList className="mb-8 h-auto p-1 bg-muted/60 rounded-lg">
+              <TabsTrigger
+                value="journals"
+                className="gap-2 px-5 py-2.5 text-sm font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm rounded-md"
+              >
+                <BookOpen size={15} />
+                Journal Publications
+                <span className="ml-1 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-semibold">
+                  {total}
+                </span>
+              </TabsTrigger>
+              <TabsTrigger
+                value="talks"
+                className="gap-2 px-5 py-2.5 text-sm font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm rounded-md"
+              >
+                <Mic size={15} />
+                Conferences &amp; Talks
+                {talks.length > 0 && (
+                  <span className="ml-1 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-semibold">
+                    {talks.length}
+                  </span>
+                )}
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Journal Publications */}
+            <TabsContent value="journals">
+              <motion.ol
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="list-none p-0 m-0 divide-y divide-border/60"
+                data-testid="publications-list"
+              >
+                {publications.map((pub, index) => {
+                  const number = total - index;
+                  return (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-40px" }}
+                      transition={{ duration: 0.35, delay: Math.min(index * 0.04, 0.3) }}
+                      className="group relative flex items-start gap-4 py-5 px-2 hover:bg-muted/40 rounded-lg transition-colors"
+                      data-testid={`publication-item-${number}`}
+                    >
+                      <span
+                        className="absolute left-2 top-[22px] text-base font-bold min-w-[26px] text-right select-none"
+                        style={{ color: "#c9973a" }}
+                        aria-hidden="true"
+                      >
+                        {number}.
+                      </span>
+
+                      <div
+                        className={`shrink-0 w-14 h-14 rounded-lg flex items-center justify-center text-[11px] font-extrabold text-center leading-tight tracking-wide ml-8 mt-0.5 ${badgeClasses[pub.badge]}`}
+                        aria-label={`Published in ${pub.badgeLabel}`}
+                      >
+                        {pub.badgeLabel}
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="text-[14.5px] font-bold text-[#0a1628] dark:text-foreground leading-snug mb-1.5">
+                          <a
+                            href={pub.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="border-b border-[#c9973a] hover:text-[#1e6fa8] hover:border-[#1e6fa8] transition-colors"
+                            data-testid={`link-publication-${number}`}
+                          >
+                            {pub.title}
+                          </a>
+                        </div>
+
+                        <div className="text-[13px] text-[#3a4560] dark:text-muted-foreground mb-2 leading-relaxed">
+                          {renderAuthors(pub.authors, pub.piSpan)}
+                        </div>
+
+                        <div className="flex items-center flex-wrap gap-2">
+                          <span className="text-[13px] text-[#1e6fa8] italic">{pub.journal}</span>
+                          <span className="text-[11.5px] bg-[#eef3fb] text-[#1e6fa8] dark:bg-primary/10 dark:text-primary px-2.5 py-0.5 rounded-full font-semibold not-italic">
+                            {pub.year}
+                          </span>
+                          {pub.isNew && (
+                            <span className="text-[10.5px] bg-[#fff3e0] text-[#c9973a] dark:bg-amber-900/30 dark:text-amber-400 px-2.5 py-0.5 rounded-full font-bold tracking-wider uppercase">
+                              NEW
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </motion.li>
+                  );
+                })}
+              </motion.ol>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="mt-8 pt-5 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground"
+              >
+                <span>Total: {total} journal publications</span>
+                <a
+                  href={GOOGLE_SCHOLAR_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors flex items-center gap-1"
+                  data-testid="link-scholar-footer"
+                >
+                  View on Google Scholar <ExternalLink size={11} className="inline" />
+                </a>
+              </motion.div>
+            </TabsContent>
+
+            {/* Conferences & Talks */}
+            <TabsContent value="talks">
+              {talks.length === 0 ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35 }}
+                  className="flex flex-col items-center justify-center py-20 text-center"
+                >
+                  <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-4">
+                    <Mic className="w-7 h-7 text-muted-foreground" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Conference talks to be added</h3>
+                  <p className="text-sm text-muted-foreground max-w-sm">
+                    Invited talks, conference presentations, and seminars will be listed here.
+                  </p>
+                </motion.div>
+              ) : (
+                <div className="divide-y divide-border/60">
+                  {talks.map((talk, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-40px" }}
+                      transition={{ duration: 0.35, delay: Math.min(index * 0.04, 0.3) }}
+                      className="py-5 px-2 hover:bg-muted/40 rounded-lg transition-colors"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span
+                          className={`shrink-0 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mt-0.5 ${talkTypeBadge[talk.type]}`}
+                        >
+                          {talk.type}
+                        </span>
+                        <div>
+                          <p className="text-[14.5px] font-bold text-[#0a1628] dark:text-foreground leading-snug mb-1">
+                            {talk.title}
+                          </p>
+                          <p className="text-[13px] text-muted-foreground">
+                            {talk.event} · {talk.location} · {talk.year}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+            </TabsContent>
+          </Tabs>
         </motion.div>
       </div>
     </div>

@@ -8,7 +8,7 @@ const navItems = [
   { href: "/about", label: "About PI" },
   { href: "/research", label: "Research" },
   { href: "/people", label: "People" },
-  { href: "/publications", label: "Publications" },
+  { href: "/publications", label: "Research Contributions" },
   { href: "/facilities", label: "Facilities" },
   { href: "/join", label: "Join Us" },
   { href: "/contact", label: "Contact" },
