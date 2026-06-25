@@ -44,7 +44,7 @@ export function Navbar() {
           />
           <div className="flex flex-col">
             <span className="font-serif font-bold text-lg leading-none tracking-tight">FIND Lab</span>
-            <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">NYCU • ICST</span>
+            <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">International College of Semiconductor Technology · NYCU</span>
           </div>
         </Link>
 

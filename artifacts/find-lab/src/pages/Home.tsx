@@ -19,7 +19,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary-foreground border border-primary/30 backdrop-blur-md text-sm font-medium mb-6 uppercase tracking-widest">
-              NYCU • ICST
+              International College of Semiconductor Technology (ICST) · NYCU
             </span>
           </motion.div>
           
