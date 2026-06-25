@@ -1,71 +1,48 @@
 import { motion } from "framer-motion";
-import { Zap, Atom, Layers, Cpu, FlaskConical } from "lucide-react";
+import { Zap, Atom, Cpu } from "lucide-react";
 
 const researchAreas = [
   {
     id: "spintronic-devices",
     icon: Zap,
-    title: "Spintronic Devices",
-    subtitle: "Spin-dependent transport and magnetic heterostructures",
+    title: "Spintronic Devices & Memory Technologies",
+    subtitle: "Spin-dependent transport, MTJs, and non-volatile memory",
     bullets: [
       "Magnetic tunnel junctions (MTJs) and spin-dependent transport",
-      "Magnetic multilayers and interface control",
-      "2D materials: MoS₂, WSe₂, graphene heterostructures",
-      "Spin–orbit torque phenomena and current-induced switching"
+      "Spin-orbit torque switching for MRAM applications",
+      "Magnetic multilayers and interface-controlled spin polarisation",
+      "2D materials — MoS₂, WSe₂, graphene — for spintronic heterostructures",
+      "Non-volatile, low-power memory device architectures"
     ],
     image: "/images/research-spintronics.png"
   },
   {
     id: "functional-materials",
     icon: Atom,
-    title: "Functional Materials for Nano Devices",
-    subtitle: "Engineering material properties for device functionality",
+    title: "Functional Materials & Nanostructures",
+    subtitle: "Engineering material properties at the nanoscale for device functionality",
     bullets: [
-      "Oxide and van der Waals heterostructure design",
       "Ferroelectric, magnetic, and topological thin films",
+      "Oxide and van der Waals heterostructure design",
+      "Atomic-scale interface control and defect engineering",
       "Structure–property correlations in functional oxides",
-      "Phase-change and strongly correlated electron systems"
-    ],
-    image: "/images/research-hall.png"
-  },
-  {
-    id: "interface-engineering",
-    icon: Layers,
-    title: "Interface Engineering of Nano Devices",
-    subtitle: "Atomic-scale control of interfaces in thin film systems",
-    bullets: [
-      "Atomic-scale interface control in thin film systems",
-      "Defect, strain, and crystal symmetry engineering",
-      "Oxide/metal and van der Waals heterostructures",
-      "Interface-driven emergent phenomena and device implications"
+      "Nanoneedle and nanostructure fabrication via laser interference lithography"
     ],
     image: "/images/research-mtj.png"
   },
   {
     id: "flexible-electronics",
     icon: Cpu,
-    title: "Flexible Electronic Devices",
-    subtitle: "Strain-tolerant and mechanically adaptable device architectures",
+    title: "Flexible Electronics & Wearable Systems",
+    subtitle: "Strain-tolerant device architectures for next-generation wearable technology",
     bullets: [
-      "Flexible spintronic and electronic device architectures",
+      "Flexible spintronic and functional device architectures",
       "Strain-dependent transport and electromechanical coupling",
       "Low-temperature fabrication on flexible substrates",
-      "Wearable-compatible device concepts (research-grade)"
+      "Wearable magnetomyography (MMG/MEG) sensing platforms",
+      "Biosensing with spintronic sensors for biointerface applications"
     ],
     image: "/images/research-flexible.png"
-  },
-  {
-    id: "nano-fabrication",
-    icon: FlaskConical,
-    title: "Nano Fabrication",
-    subtitle: "High-precision patterning and thin film processing",
-    bullets: [
-      "Laser interference lithography for nanopatterning",
-      "Nano/micro pattern transfer techniques",
-      "Thin film stacks and lift-off processes",
-      "High-aspect-ratio nanostructure fabrication"
-    ],
-    image: "/images/research-nanofab.png"
   }
 ];
 
