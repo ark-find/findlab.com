@@ -1,10 +1,9 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import Home from "@/pages/Home";
-import About from "@/pages/About";
+import Members from "@/pages/Members";
 import Research from "@/pages/Research";
-import People from "@/pages/People";
 import Publications from "@/pages/Publications";
 import Facilities from "@/pages/Facilities";
 import Join from "@/pages/Join";
@@ -18,9 +17,10 @@ function Router() {
       <main className="flex-grow pt-16">
         <Switch>
           <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
+          <Route path="/members" component={Members} />
+          <Route path="/about">{() => <Redirect to="/members" />}</Route>
+          <Route path="/people">{() => <Redirect to="/members" />}</Route>
           <Route path="/research" component={Research} />
-          <Route path="/people" component={People} />
           <Route path="/publications" component={Publications} />
           <Route path="/facilities" component={Facilities} />
           <Route path="/join" component={Join} />
