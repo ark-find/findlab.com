@@ -104,12 +104,6 @@ export default function Members() {
                 </div>
               </section>
 
-              <section>
-                <h3 className="text-xl font-serif font-semibold mb-4 text-foreground">Lab Vision</h3>
-                <p className="text-muted-foreground leading-relaxed p-5 bg-secondary rounded-lg border-l-4 border-primary text-sm">
-                  "Interface-engineered spintronic and functional nano-device systems."
-                </p>
-              </section>
             </motion.div>
           </div>
         </motion.div>

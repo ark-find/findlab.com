@@ -79,6 +79,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Lab Vision */}
+      <section className="py-16 bg-secondary/40 border-y border-border/40">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <motion.blockquote
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="text-2xl md:text-3xl font-serif italic text-foreground leading-relaxed mb-4">
+              "Interface-engineered spintronic and functional nano-device systems."
+            </p>
+            <footer className="text-sm text-muted-foreground uppercase tracking-widest">
+              Lab Vision — FIND Lab
+            </footer>
+          </motion.blockquote>
+        </div>
+      </section>
+
       {/* Research Highlights */}
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
