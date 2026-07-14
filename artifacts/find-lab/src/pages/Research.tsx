@@ -107,7 +107,6 @@ export default function Research() {
                   </div>
                   <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">{area.title}</h2>
                 </div>
-                <p className="text-sm text-accent font-medium tracking-wide uppercase">{area.subtitle}</p>
                 <div className="w-12 h-1 bg-primary mb-4"></div>
                 <p className="text-muted-foreground leading-relaxed text-sm">{area.description}</p>
                 <ul className="space-y-3 pt-2">
