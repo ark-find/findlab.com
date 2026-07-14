@@ -100,9 +100,6 @@ export default function Research() {
               <div className="w-full md:w-1/2 space-y-4">
                 <div className="flex items-center gap-4 mb-2">
                   <span className="text-5xl font-serif text-accent opacity-40">0{index + 1}</span>
-                  <span className="text-xs font-medium uppercase tracking-widest text-accent border border-accent/40 rounded-full px-3 py-1">
-                    {area.label}
-                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
