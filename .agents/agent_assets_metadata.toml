@@ -14,12 +14,6 @@ type = "image"
 title = "PI profile headshot"
 
 [[generated]]
-id = "G_krje50t_npo5VVRC6hM"
-uri = "file://artifacts/find-lab/public/images/spintronics.png"
-type = "image"
-title = "spintronics illustration"
-
-[[generated]]
 id = "i--Asp260MNJ9BTKxSAlQ"
 uri = "file://artifacts/find-lab/public/images/nanoelectronics.png"
 type = "image"
