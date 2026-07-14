@@ -50,7 +50,6 @@ const updates = [
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-
       {/* ── Section 1: Hero ── */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <HeroBackground />
@@ -73,7 +72,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p
-                className="text-lg md:text-xl text-white/80 mb-2 font-light"
+                className="text-lg md:text-xl mb-2 font-light text-[color:var(--color-white)] border-t-[color:var(--color-white)] border-r-[color:var(--color-white)] border-b-[color:var(--color-white)] border-l-[color:var(--color-white)]"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <span className="text-accent font-semibold">F</span>unctional{" "}
@@ -133,7 +132,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── Section 2: Research Vision ── */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -157,7 +155,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* ── Section 3: Research Directions ── */}
       <section className="py-24 bg-secondary/40">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -200,7 +197,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── Section 4: Research Approach ── */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -254,7 +250,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── Section 5: Current Focus ── */}
       <section className="py-20 bg-primary/5 border-y border-border/40">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -280,7 +275,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ── Section 6: Join FIND Lab ── */}
       <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/images/hero-bg.png')] bg-cover bg-center mix-blend-overlay" />
@@ -299,7 +293,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* ── Section 7: Latest Updates ── */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -328,7 +321,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
