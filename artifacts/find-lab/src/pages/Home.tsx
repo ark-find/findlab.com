@@ -9,19 +9,19 @@ const researchTiles = [
   {
     title: "Spintronic Devices & Memory Technologies",
     text: "Investigating spin transport, magnetic heterostructures, memory devices, and interface-controlled spintronic functionality.",
-    image: "/images/research-mtj-cobefb.png",
+    image: "/images/research-spintronics.png",
     featured: true,
   },
   {
     title: "Functional Materials & Nanostructures",
     text: "Exploring functional materials, emerging material systems, and engineered nanostructures for advanced nanoelectronic devices.",
-    image: "/images/research-functional-materials.png",
+    image: "/images/research-hall.png",
     featured: false,
   },
   {
     title: "Flexible Electronics & Wearable Systems",
     text: "Developing flexible device platforms for sensing, wearable electronics, and emerging functional applications.",
-    image: "/images/research-flexible-device.png",
+    image: "/images/research-flexible.png",
     featured: false,
   },
 ];
