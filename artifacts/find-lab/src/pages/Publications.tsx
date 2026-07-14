@@ -352,23 +352,6 @@ export default function Publications() {
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">Research Contributions</h1>
           <div className="w-20 h-1 bg-accent mb-6"></div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">
-              PI name (<span className="font-bold text-foreground underline decoration-[#c9973a]">Ramesh AK</span>) is underlined in amber throughout.
-            </p>
-            <Button
-              variant="outline"
-              size="sm"
-              className="gap-2 shrink-0"
-              asChild
-            >
-              <a href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer">
-                <BookOpen size={15} />
-                Google Scholar
-                <ExternalLink size={13} />
-              </a>
-            </Button>
-          </div>
         </motion.div>
 
         {/* Tabs */}
