@@ -35,7 +35,7 @@ const researchAreas = [
       "Advanced Nanofabrication",
       "Nano-Bio Interfaces",
     ],
-    image: "/images/research-nanofab.png",
+    image: "/images/research-functional-materials.png",
   },
   {
     id: "flexible-electronics",
