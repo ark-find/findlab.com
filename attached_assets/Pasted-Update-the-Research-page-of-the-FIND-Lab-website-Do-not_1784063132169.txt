@@ -1,0 +1,44 @@
+Update the Research page of the FIND Lab website.
+Do not redesign the entire website. Keep the existing header, navigation, fonts, color palette, footer, and overall visual style. Only reorganize and improve the Research page content.
+The Research page should contain three major research areas, presented as three visually balanced cards or sections.
+The first area must receive the strongest visual emphasis because it is the primary research focus of the lab.
+Page heading
+Research
+Introductory text
+The FIND Lab develops functional nano devices by combining device physics, advanced materials, interface engineering, and nanofabrication. Our research is organized around three interconnected areas spanning spintronic devices, enabling materials and nanostructures, and flexible electronic systems.
+
+Research Area 1
+Title: Spintronic Devices & Memory Technologies
+Label: Primary Focus
+Description: Engineering next-generation spintronic devices through interface engineering, magnetic heterostructures, and nanoscale transport for memory and sensing applications.
+Subtopics:
+	•	Magnetic Tunnel Junctions (MTJs)
+	•	MRAM Technologies
+	•	Spin Transport Physics
+	•	Interface Engineering
+	•	Magnetic Sensors
+	•	Beyond-CMOS Spintronics
+Visual direction: Use the custom magnetic tunnel junction image as the thumbnail. This card should be slightly larger or more visually prominent than the other two cards. Do not use generic AI-chip or circuit-board imagery.
+
+Research Area 2
+Title: Functional Materials & Nanostructures
+Label: Enabling Technologies
+Description: Exploring functional materials and engineering nanostructures for developing advanced nanoelectronic devices through innovative fabrication and interface engineering.
+Subtopics:
+	•	Functional Thin Films
+	•	2D & Emerging Materials
+	•	Nanostructure Engineering
+	•	Advanced Nanofabrication
+	•	Nano-Bio Interfaces
+Visual direction: Use a meaningful scientific image showing functional thin films, nanoscale structures, patterned surfaces, crystal lattices, or nanofabrication. 
+
+Research Area 3
+Title: Flexible Electronics & Wearable Systems
+Label: Emerging Applications
+Description: Developing flexible and wearable electronic systems for next-generation sensing and sustainable technologies.
+Subtopics:
+	•	Flexible Electronics
+	•	Stretchable Devices
+	•	Wearable Sensors and Actuators
+	•	Flexible Displays
+Visual direction: Use the uploaded image with flexible-device photograph showing the curved device resting on a gloved hand.
