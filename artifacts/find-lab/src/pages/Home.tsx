@@ -28,8 +28,7 @@ const researchTiles = [
 
 const workflow = [
   { label: "Functional Materials", icon: FlaskConical },
-  { label: "Nanostructure Design", icon: Layers },
-  { label: "Nanofabrication", icon: Cpu },
+  { label: "Nanostructure Design & Fabrication", icon: Layers },
   { label: "Interface Engineering", icon: Zap },
   { label: "Device Physics", icon: Atom },
   { label: "Functional Nano Devices", icon: MoveRight, highlight: true },
