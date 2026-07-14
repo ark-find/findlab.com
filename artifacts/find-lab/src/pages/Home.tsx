@@ -250,26 +250,61 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ── Section 5: Current Focus ── */}
+      {/* ── Section 5: Collaborators ── */}
       <section className="py-20 bg-primary/5 border-y border-border/40">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-12"
           >
-            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Current Scientific Focus</h2>
-            <div className="w-16 h-1 bg-accent mx-auto" />
+            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Collaborators</h2>
+            <div className="w-16 h-1 bg-accent mx-auto mb-4" />
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+              FIND Lab maintains active research collaborations with leading institutions across Taiwan, Singapore, and India.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {currentFocus.map((item, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              {
+                logo: "/images/logo-itri.svg",
+                name: "ITRI",
+                full: "Industrial Technology Research Institute",
+                country: "Taiwan",
+                accent: "#00529B",
+              },
+              {
+                logo: "/images/logo-ntu.svg",
+                name: "NTU",
+                full: "National Taiwan University",
+                country: "Taiwan",
+                accent: "#8B0000",
+              },
+              {
+                logo: "/images/logo-iitkgp.svg",
+                name: "IIT Kharagpur",
+                full: "Indian Institute of Technology Kharagpur",
+                country: "India",
+                accent: "#660000",
+              },
+            ].map((collab, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex items-start gap-3 bg-card border border-border/50 rounded-lg px-5 py-4"
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-card border border-border/50 rounded-xl p-6 flex flex-col items-center text-center gap-4 hover:shadow-md hover:border-primary/20 transition-all"
               >
-                <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
-                <p className="text-foreground text-sm leading-relaxed">{item}</p>
+                <div className="w-full h-16 flex items-center justify-center">
+                  <img
+                    src={collab.logo}
+                    alt={`${collab.name} logo`}
+                    className="max-h-14 max-w-[160px] object-contain"
+                  />
+                </div>
+                <div className="w-12 h-px" style={{ background: collab.accent, opacity: 0.4 }} />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{collab.country}</p>
+                  <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{collab.full}</p>
+                </div>
               </motion.div>
             ))}
           </div>

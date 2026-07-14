@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
+  <rect width="220" height="80" fill="white"/>
+  <rect x="0" y="0" width="7" height="80" fill="#00529B"/>
+  <text x="22" y="38" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="30" fill="#00529B" letter-spacing="3">ITRI</text>
+  <text x="22" y="52" font-family="Arial, sans-serif" font-size="7.8" fill="#444" letter-spacing="0.2">Industrial Technology</text>
+  <text x="22" y="63" font-family="Arial, sans-serif" font-size="7.8" fill="#444" letter-spacing="0.2">Research Institute</text>
+  <text x="22" y="74" font-family="Arial, sans-serif" font-size="6.8" fill="#00529B" font-weight="bold" letter-spacing="1">TAIWAN</text>
+</svg>
