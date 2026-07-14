@@ -141,9 +141,6 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">
-              Engineering Functionality Through Nanoscale Interfaces
-            </h2>
             <div className="w-16 h-1 bg-accent mx-auto mb-8" />
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               At FIND Lab, we investigate how interfaces, materials, nanostructures, and device geometry govern physical behaviour at reduced dimensions. By combining nanofabrication, interface engineering, functional-material integration, and experimental device physics, we aim to understand and realize new functionalities in emerging nanoelectronic systems.
