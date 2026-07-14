@@ -13,10 +13,10 @@ const researchAreas = [
     bullets: [
       "Magnetic Tunnel Junctions (MTJs)",
       "MRAM Technologies",
-      "Spin Transport Physics",
+      "Spintronic Sensors",
       "Interface Engineering",
-      "Magnetic Sensors",
-      "Beyond-CMOS Spintronics",
+      "Neuromorphic Computing",
+      "Spintronics-based AI Hardware",
     ],
     image: "/images/research-mtj-cobefb.png",
   },
