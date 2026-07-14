@@ -9,19 +9,19 @@ const researchTiles = [
   {
     title: "Spintronic Devices & Memory Technologies",
     text: "Investigating spin transport, magnetic heterostructures, memory devices, and interface-controlled spintronic functionality.",
-    image: "/images/research-spintronics.png",
+    icon: Zap,
     featured: true,
   },
   {
     title: "Functional Materials & Nanostructures",
     text: "Exploring functional materials, emerging material systems, and engineered nanostructures for advanced nanoelectronic devices.",
-    image: "/images/research-hall.png",
+    icon: Atom,
     featured: false,
   },
   {
     title: "Flexible Electronics & Wearable Systems",
     text: "Developing flexible device platforms for sensing, wearable electronics, and emerging functional applications.",
-    image: "/images/research-flexible.png",
+    icon: Cpu,
     featured: false,
   },
 ];
@@ -179,26 +179,16 @@ export default function Home() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={tile.featured ? "md:col-span-1 md:row-span-1" : ""}
               >
-                <Card className={`overflow-hidden h-full border-border/50 hover:shadow-lg transition-shadow ${tile.featured ? "ring-1 ring-primary/30" : ""}`}>
-                  <div className={`relative overflow-hidden ${tile.featured ? "h-56" : "h-44"}`}>
-                    <img
-                      src={tile.image}
-                      alt={tile.title}
-                      className="w-full h-full object-cover"
-                    />
+                <Card className={`h-full border-border/50 hover:shadow-lg hover:border-primary/30 transition-all ${tile.featured ? "ring-1 ring-primary/30 bg-primary/5" : "bg-card"}`}>
+                  <CardContent className="p-7 flex flex-col gap-4">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${tile.featured ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"}`}>
+                      <tile.icon size={22} />
+                    </div>
                     {tile.featured && (
-                      <div className="absolute top-3 left-3">
-                        <span className="text-xs font-medium uppercase tracking-wider bg-primary text-primary-foreground px-2.5 py-1 rounded-full">
-                          Primary Focus
-                        </span>
-                      </div>
+                      <span className="text-xs font-medium uppercase tracking-widest text-primary">Primary Focus</span>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  </div>
-                  <CardContent className="p-5">
-                    <h3 className={`font-serif font-bold text-foreground mb-2 ${tile.featured ? "text-lg" : "text-base"}`}>
+                    <h3 className={`font-serif font-bold text-foreground leading-snug ${tile.featured ? "text-xl" : "text-lg"}`}>
                       {tile.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{tile.text}</p>
