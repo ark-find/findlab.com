@@ -72,7 +72,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p
-                className="text-lg md:text-xl mb-2 font-light text-[color:var(--color-white)] border-t-[color:var(--color-white)] border-r-[color:var(--color-white)] border-b-[color:var(--color-white)] border-l-[color:var(--color-white)]"
+                className="text-lg md:text-xl mb-2 text-[color:var(--color-white)] border-t-[color:var(--color-white)] border-r-[color:var(--color-white)] border-b-[color:var(--color-white)] border-l-[color:var(--color-white)] font-bold"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <span className="text-accent font-semibold">F</span>unctional{" "}
@@ -82,7 +82,7 @@ export default function Home() {
               </motion.p>
 
               <motion.p
-                className="text-base text-white/60 mb-10 font-light"
+                className="text-base mb-10 font-normal text-[color:var(--color-white)]"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
               >
                 International College of Semiconductor Technology<br />
