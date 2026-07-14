@@ -118,18 +118,16 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Right: scientific visual */}
+            {/* Right: FIND Lab logo */}
             <motion.div
-              className="flex-1 w-full max-w-md lg:max-w-none"
-              initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex-1 w-full max-w-xs lg:max-w-sm flex items-center justify-center"
+              initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 0.4 }}
             >
-              <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl backdrop-blur-sm">
-                <img
-                  src="/images/research-mtj-cobefb.png"
-                  alt="Magnetic tunnel junction structure showing CoFeB/MgO/CoFeB spin-dependent tunnelling"
-                  className="w-full aspect-[4/3] object-cover opacity-90"
-                />
-              </div>
+              <img
+                src="/images/find-lab-logo.png"
+                alt="FIND Lab logo"
+                className="w-full drop-shadow-2xl"
+              />
             </motion.div>
 
           </div>
