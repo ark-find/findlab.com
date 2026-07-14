@@ -1,0 +1,329 @@
+Use the following as a single Replit Agent prompt. It is written to redesign only the **Home page**, without duplicating the detailed Research page.
+
+Create or redesign the Home page for the official website of:
+
+FIND Lab
+Functional Innovations in Nano Devices Laboratory
+
+International College of Semiconductor Technology (ICST)
+National Yang Ming Chiao Tung University (NYCU), Taiwan
+
+The website represents a newly established academic research group led by Dr. Akhil K. Ramesh.
+
+The Home page must look like a serious university research laboratory website, not a startup landing page.
+
+## Scientific Identity
+
+The laboratory investigates how nanoscale interfaces, functional materials, nanostructures, and device architectures can be explored and integrated through nanofabrication to realize functional nanoelectronic devices.
+
+Do not describe the laboratory as a materials-engineering laboratory.
+
+The laboratory does not primarily synthesize or engineer new materials. It explores and integrates different functional materials and nanostructures for nanoelectronic devices, while focusing strongly on interface engineering, nanofabrication, and device physics.
+
+The unifying scientific theme is:
+
+Engineering nanoscale interfaces and architectures to enable functional nano devices.
+
+## Overall Tone
+
+The website should feel:
+
+* scientifically rigorous
+* academically credible
+* modern
+* professional
+* forward-looking
+* welcoming to prospective students
+* suitable for collaborators and funding agencies
+
+Avoid:
+
+* startup-style language
+* excessive hype
+* exaggerated claims
+* generic AI terminology
+* “world-leading,” “revolutionary,” or similar unsupported claims
+* flashy animations
+* excessive gradients
+* generic circuit-board or AI-chip images
+
+## Navigation Bar
+
+Include:
+
+* Home
+* Research
+* Contributions
+* Members
+* Join Us
+* Contact
+
+Use a clean sticky navigation bar.
+
+Include the FIND Lab logo or wordmark on the left.
+
+## Section 1: Hero Section
+
+Create a full-width hero section with a two-column layout.
+
+Left side:
+
+FIND Lab
+
+Functional Innovations in Nano Devices Laboratory
+
+International College of Semiconductor Technology
+National Yang Ming Chiao Tung University
+
+Use this tagline:
+
+Engineering nanoscale interfaces. Enabling functional devices.
+
+Use this introductory text:
+
+FIND Lab explores how nanoscale interfaces, functional materials, nanostructures, and device architectures can be integrated through advanced nanofabrication to realize new functionalities in nanoelectronic devices.
+
+Include two primary buttons:
+
+* Explore Research
+* Join FIND Lab
+
+Include one secondary text link:
+
+* Research Contributions
+
+The “Explore Research” button must link to the Research page.
+
+Right side:
+
+Use a refined scientific visual combining some of the following:
+
+* layered nanoscale interfaces
+* magnetic tunnel junction structures
+* atomic lattices
+* patterned nanostructures
+* thin-film device layers
+* subtle magnetic textures
+
+The visual should be scientifically inspired but not overloaded with labels.
+
+Do not use generic AI chips, circuit boards, robots, glowing brains, or stock laboratory images.
+
+Use subtle depth and motion only if it remains professional.
+
+## Section 2: Research Vision
+
+Heading:
+
+Engineering Functionality Through Nanoscale Interfaces
+
+Use this text:
+
+At FIND Lab, we investigate how interfaces, materials, nanostructures, and device geometry govern physical behaviour at reduced dimensions. By combining nanofabrication, interface engineering, functional-material integration, and experimental device physics, we aim to understand and realize new functionalities in emerging nanoelectronic systems.
+
+Add a short highlighted statement:
+
+Interfaces are active functional elements, not merely boundaries between materials.
+
+Present this section with generous whitespace and one meaningful scientific illustration or schematic.
+
+## Section 3: Research Directions
+
+Do not reproduce the detailed content of the Research page.
+
+Create only three concise visual tiles introducing the laboratory’s research directions.
+
+Tile 1:
+
+Spintronic Devices & Memory Technologies
+
+Short text:
+
+Investigating spin transport, magnetic heterostructures, memory devices, and interface-controlled spintronic functionality.
+
+Tile 2:
+
+Functional Materials & Nanostructures
+
+Short text:
+
+Exploring functional materials, emerging material systems, and engineered nanostructures for advanced nanoelectronic devices.
+
+Tile 3:
+
+Flexible Electronics & Wearable Systems
+
+Short text:
+
+Developing flexible device platforms for sensing, wearable electronics, and emerging functional applications.
+
+Each tile should contain:
+
+* a scientific image or illustration
+* the title
+* one short sentence only
+
+Do not include subtopic lists on the Home page.
+
+Place one centered button below the tiles:
+
+Explore Research
+
+This button must link to the Research page.
+
+Make the first tile slightly more visually prominent because spintronic devices and memory technologies are the primary research focus.
+
+## Section 4: Research Approach
+
+Heading:
+
+Our Research Approach
+
+Create a clean horizontal workflow on desktop and a vertical workflow on mobile.
+
+Use the following sequence:
+
+Functional Materials
+→ Nanostructure Design
+→ Nanofabrication
+→ Interface Engineering
+→ Device Physics
+→ Functional Nano Devices
+
+Add this short explanatory text:
+
+Our research connects material selection, nanoscale architecture, fabrication, and physical measurement to establish clear structure–interface–function relationships in nanoelectronic devices.
+
+Use simple scientific icons or abstract diagrams.
+
+Do not use cartoon illustrations.
+
+## Section 5: Current Focus
+
+Heading:
+
+Current Scientific Focus
+
+Present four concise items:
+
+* Magnetic tunnel junctions and MRAM technologies
+* Interface-controlled spin transport
+* Functional materials and emerging nanostructures
+* Flexible thin-film and wearable device platforms
+
+These are current research directions, not claims of completed achievements.
+
+Do not use language such as “breakthrough,” “transformative,” or “revolutionary.”
+
+## Section 6: Join FIND Lab
+
+Create a visually distinct but restrained recruitment section.
+
+Heading:
+
+Join FIND Lab
+
+Text:
+
+FIND Lab welcomes motivated Master’s students, PhD students, visiting researchers, and collaborators interested in nanofabrication, spintronics, functional materials, nanostructures, and emerging nanoelectronic devices.
+
+Candidates from physics, materials science, electrical engineering, electronics, mechanical engineering, and related disciplines are encouraged to contact the laboratory.
+
+Add a button:
+
+View Opportunities
+
+Link this button to the Join Us page.
+
+## Section 7: Latest Updates
+
+Add a simple Latest Updates or News section with space for three entries.
+
+Use placeholder entries only if no real news content is available.
+
+Suggested initial items:
+
+* FIND Lab established at ICST, NYCU
+* Recruitment open for prospective graduate students
+* Research website launched
+
+This section should be easy to update later.
+
+## Footer
+
+Include:
+
+FIND Lab
+Functional Innovations in Nano Devices Laboratory
+
+International College of Semiconductor Technology
+National Yang Ming Chiao Tung University
+
+Include links for:
+
+* Research
+* Contributions
+* Members
+* Join Us
+* Contact
+* Google Scholar
+* LinkedIn
+
+Include a professional copyright line.
+
+## Visual Design
+
+Use:
+
+* white or soft off-white backgrounds
+* deep navy, charcoal, and muted blue
+* restrained gold or warm accent details
+* clean sans-serif typography
+* generous whitespace
+* clear visual hierarchy
+* subtle shadows
+* restrained hover effects
+* responsive layout
+* strong mobile compatibility
+
+Possible font choices:
+
+* Inter
+* IBM Plex Sans
+* Manrope
+* Source Sans 3
+
+Use only one primary typeface and, if necessary, one restrained secondary typeface.
+
+## Scientific Visual Style
+
+The visual identity may include a subtle soft illustrative atmosphere, but it must remain scientifically credible.
+
+Visuals may combine:
+
+* atomic lattices
+* layered materials
+* nanoscale interfaces
+* patterned surfaces
+* magnetic textures
+* thin-film stacks
+* lithographic structures
+
+Do not make the website look cartoonish, cinematic, game-like, or entertainment-oriented.
+
+## Technical Requirements
+
+* Preserve the existing page routes.
+* Do not remove existing Research, Contributions, Members, Join Us, or Contact pages.
+* Ensure all buttons link to the correct pages.
+* Make the Home page fully responsive.
+* Optimize images for fast loading.
+* Add accessible alt text to scientific images.
+* Use semantic HTML.
+* Maintain good contrast and readable font sizes.
+* Avoid unnecessary JavaScript or backend dependencies.
+* Keep the code portable so it can later be deployed outside Replit or migrated to an NYCU server.
+* Do not use Replit-specific database or authentication features for the Home page.
+* Keep the Home page easy to edit later.
+
+One wording point: keep **“functional-material integration”** rather than **“materials engineering.”** That describes your intended work much more accurately.

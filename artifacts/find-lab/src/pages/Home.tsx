@@ -1,186 +1,349 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, ChevronRight, Zap, Atom, Layers, Cpu, FlaskConical } from "lucide-react";
+import { ArrowRight, ChevronRight, Zap, Atom, Layers, Cpu, FlaskConical, MoveRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { HeroBackground } from "@/components/hero/HeroBackground";
+
+const researchTiles = [
+  {
+    title: "Spintronic Devices & Memory Technologies",
+    text: "Investigating spin transport, magnetic heterostructures, memory devices, and interface-controlled spintronic functionality.",
+    image: "/images/research-mtj-cobefb.png",
+    featured: true,
+  },
+  {
+    title: "Functional Materials & Nanostructures",
+    text: "Exploring functional materials, emerging material systems, and engineered nanostructures for advanced nanoelectronic devices.",
+    image: "/images/research-functional-materials.png",
+    featured: false,
+  },
+  {
+    title: "Flexible Electronics & Wearable Systems",
+    text: "Developing flexible device platforms for sensing, wearable electronics, and emerging functional applications.",
+    image: "/images/research-flexible-device.png",
+    featured: false,
+  },
+];
+
+const workflow = [
+  { label: "Functional Materials", icon: FlaskConical },
+  { label: "Nanostructure Design", icon: Layers },
+  { label: "Nanofabrication", icon: Cpu },
+  { label: "Interface Engineering", icon: Zap },
+  { label: "Device Physics", icon: Atom },
+  { label: "Functional Nano Devices", icon: MoveRight, highlight: true },
+];
+
+const currentFocus = [
+  "Magnetic tunnel junctions and MRAM technologies",
+  "Interface-controlled spin transport",
+  "Functional materials and emerging nanostructures",
+  "Flexible thin-film and wearable device platforms",
+];
+
+const updates = [
+  { date: "2025", text: "FIND Lab established at ICST, National Yang Ming Chiao Tung University (NYCU), Taiwan." },
+  { date: "2026", text: "Recruitment open for motivated Master's and PhD students for Fall 2026." },
+  { date: "2026", text: "FIND Lab research website launched." },
+];
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        <HeroBackground />
-        
-        <div className="container relative z-10 mx-auto px-4 text-center mt-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <span className="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary-foreground border border-primary/30 backdrop-blur-md text-sm font-medium mb-6 uppercase tracking-widest">
-              International College of Semiconductor Technology (ICST) · NYCU
-            </span>
-          </motion.div>
-          
-          <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 tracking-tight max-w-4xl mx-auto leading-tight drop-shadow-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >Functional Innovations in Nano Devices (FIND) Lab</motion.h1>
-          
-          <motion.p
-            className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            Engineering the interface between condensed matter physics and nanoelectronics.
-          </motion.p>
-          
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
-              <Link href="/research">Explore Research <ArrowRight className="ml-2 h-4 w-4" /></Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-background/10 text-white border-white/20 hover:bg-background/20 backdrop-blur-sm w-full sm:w-auto">
-              <Link href="/join">Join the Lab</Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-      {/* Lab Intro */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl font-serif font-bold mb-6 text-foreground">Welcome to the FIND Lab</h2>
-            <div className="w-16 h-1 bg-accent mx-auto mb-8"></div>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Led by Dr. Akhil K. Ramesh at the International College of Semiconductor Technology (ICST), NYCU, 
-              the FIND Lab is dedicated to interface-engineered spintronic and functional nano-device systems. 
-              We explore the fundamental physics of nanoscale interfaces and translate these discoveries into 
-              scalable, functional device architectures — operating at the forefront of semiconductor materials 
-              and nanodevice research.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-      {/* Lab Vision */}
-      <section className="py-16 bg-secondary/40 border-y border-border/40">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
-          <motion.blockquote
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="text-2xl md:text-3xl font-serif italic text-foreground leading-relaxed mb-4">
-              "Interface-engineered spintronic and functional nano-device systems."
-            </p>
-            <footer className="text-sm text-muted-foreground uppercase tracking-widest">
-              Lab Vision — FIND Lab
-            </footer>
-          </motion.blockquote>
-        </div>
-      </section>
-      {/* Research Highlights */}
-      <section className="py-24 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-            <div>
-              <h2 className="text-3xl font-serif font-bold mb-4">Research Highlights</h2>
-              <p className="text-muted-foreground max-w-2xl">
-                Our work bridges the gap between condensed matter physics and practical device engineering.
-              </p>
-            </div>
-            <Button asChild variant="link" className="hidden md:flex mt-4 md:mt-0">
-              <Link href="/research">View all research <ChevronRight className="ml-1 h-4 w-4" /></Link>
-            </Button>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {[
-              {
-                title: "Spintronic Devices",
-                desc: "Magnetic tunnel junctions, spin-orbit torque, and 2D material heterostructures.",
-                icon: Zap
-              },
-              {
-                title: "Functional Materials",
-                desc: "Ferroelectric, magnetic, and topological thin films for device functionality.",
-                icon: Atom
-              },
-              {
-                title: "Interface Engineering",
-                desc: "Atomic-scale interface control, defect engineering, and structure–property correlations.",
-                icon: Layers
-              },
-              {
-                title: "Flexible Electronics",
-                desc: "Strain-dependent transport and flexible spintronic device architectures.",
-                icon: Cpu
-              },
-              {
-                title: "Nano Fabrication",
-                desc: "Laser interference lithography and high-aspect-ratio nanostructure patterning.",
-                icon: FlaskConical
-              }
-            ].map((item, i) => (
+      {/* ── Section 1: Hero ── */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <HeroBackground />
+        <div className="container relative z-10 mx-auto px-4 max-w-6xl pt-20 pb-12">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+            {/* Left: text */}
+            <div className="flex-1 text-center lg:text-left">
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
+                <span className="inline-block py-1 px-3 rounded-full bg-white/15 text-white border border-white/25 backdrop-blur-sm text-xs font-medium mb-6 uppercase tracking-widest">
+                  ICST · National Yang Ming Chiao Tung University · Taiwan
+                </span>
+              </motion.div>
+
+              <motion.h1
+                className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-3 tracking-tight leading-tight drop-shadow-lg"
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
+              >
+                FIND Lab
+              </motion.h1>
+
+              <motion.p
+                className="text-lg md:text-xl text-white/80 mb-2 font-light"
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
+              >
+                Functional Innovations in Nano Devices Laboratory
+              </motion.p>
+
+              <motion.p
+                className="text-base text-white/60 mb-6 font-light"
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
+              >
+                International College of Semiconductor Technology<br />
+                National Yang Ming Chiao Tung University
+              </motion.p>
+
+              <motion.p
+                className="text-xl md:text-2xl font-serif italic text-white/90 mb-4 leading-snug"
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
+              >
+                Engineering nanoscale interfaces.<br className="hidden sm:block" /> Enabling functional devices.
+              </motion.p>
+
+              <motion.p
+                className="text-base text-white/70 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
+              >
+                FIND Lab explores how nanoscale interfaces, functional materials, nanostructures, and device architectures can be integrated through advanced nanofabrication to realize new functionalities in nanoelectronic devices.
+              </motion.p>
+
+              <motion.div
+                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3"
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
+              >
+                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
+                  <Link href="/research">Explore Research <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="bg-white/10 text-white border-white/25 hover:bg-white/20 backdrop-blur-sm w-full sm:w-auto">
+                  <Link href="/join">Join FIND Lab</Link>
+                </Button>
+                <Button asChild variant="link" className="text-white/70 hover:text-white w-full sm:w-auto">
+                  <Link href="/publications">Research Contributions <ChevronRight className="ml-1 h-4 w-4" /></Link>
+                </Button>
+              </motion.div>
+            </div>
+
+            {/* Right: scientific visual */}
+            <motion.div
+              className="flex-1 w-full max-w-md lg:max-w-none"
+              initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl backdrop-blur-sm">
+                <img
+                  src="/images/research-mtj-cobefb.png"
+                  alt="Magnetic tunnel junction structure showing CoFeB/MgO/CoFeB spin-dependent tunnelling"
+                  className="w-full aspect-[4/3] object-cover opacity-90"
+                />
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 2: Research Vision ── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">
+              Engineering Functionality Through Nanoscale Interfaces
+            </h2>
+            <div className="w-16 h-1 bg-accent mx-auto mb-8" />
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              At FIND Lab, we investigate how interfaces, materials, nanostructures, and device geometry govern physical behaviour at reduced dimensions. By combining nanofabrication, interface engineering, functional-material integration, and experimental device physics, we aim to understand and realize new functionalities in emerging nanoelectronic systems.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}
+            className="rounded-xl border-l-4 border-accent bg-accent/5 px-8 py-6 max-w-2xl mx-auto text-center"
+          >
+            <p className="text-lg md:text-xl font-serif italic text-foreground leading-relaxed">
+              "Interfaces are active functional elements, not merely boundaries between materials."
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Section 3: Research Directions ── */}
+      <section className="py-24 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Research Directions</h2>
+            <div className="w-16 h-1 bg-accent mx-auto" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {researchTiles.map((tile, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}
+                className={tile.featured ? "md:col-span-1 md:row-span-1" : ""}
               >
-                <Card className="h-full bg-card hover:shadow-md transition-shadow border-border/50">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
-                      <item.icon size={24} />
-                    </div>
-                    <CardTitle className="font-serif">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm">
-                      {item.desc}
-                    </CardDescription>
+                <Card className={`overflow-hidden h-full border-border/50 hover:shadow-lg transition-shadow ${tile.featured ? "ring-1 ring-primary/30" : ""}`}>
+                  <div className={`relative overflow-hidden ${tile.featured ? "h-56" : "h-44"}`}>
+                    <img
+                      src={tile.image}
+                      alt={tile.title}
+                      className="w-full h-full object-cover"
+                    />
+                    {tile.featured && (
+                      <div className="absolute top-3 left-3">
+                        <span className="text-xs font-medium uppercase tracking-wider bg-primary text-primary-foreground px-2.5 py-1 rounded-full">
+                          Primary Focus
+                        </span>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </div>
+                  <CardContent className="p-5">
+                    <h3 className={`font-serif font-bold text-foreground mb-2 ${tile.featured ? "text-lg" : "text-base"}`}>
+                      {tile.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{tile.text}</p>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </div>
-          
-          <div className="mt-8 text-center md:hidden">
-            <Button asChild variant="outline">
-              <Link href="/research">View all research</Link>
+
+          <div className="text-center">
+            <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary hover:bg-primary/5">
+              <Link href="/research">Explore Research <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
         </div>
       </section>
-      {/* CTA / Join */}
-      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('/images/hero-bg.png')] bg-cover bg-center mix-blend-overlay"></div>
-        <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">Join the FIND Lab</h2>
-          <p className="text-lg text-primary-foreground/80 mb-10">
-            We are actively recruiting motivated PhD and Master's students for Fall 2026. 
-            Join us in exploring the frontiers of spintronics and nanodevice engineering.
-          </p>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/join">View Open Positions</Link>
-          </Button>
+
+      {/* ── Section 4: Research Approach ── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Our Research Approach</h2>
+            <div className="w-16 h-1 bg-accent mx-auto mb-6" />
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Our research connects material selection, nanoscale architecture, fabrication, and physical measurement to establish clear structure–interface–function relationships in nanoelectronic devices.
+            </p>
+          </motion.div>
+
+          {/* Desktop: horizontal chain */}
+          <div className="hidden md:flex items-center justify-center gap-0 flex-wrap">
+            {workflow.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="flex items-center"
+              >
+                <div className={`flex flex-col items-center px-4 py-4 rounded-xl border text-center w-32 ${step.highlight ? "bg-primary text-primary-foreground border-primary" : "bg-card border-border/50 hover:border-primary/30 transition-colors"}`}>
+                  <step.icon size={22} className={step.highlight ? "text-primary-foreground mb-2" : "text-primary mb-2"} />
+                  <span className={`text-xs font-medium leading-tight ${step.highlight ? "text-primary-foreground" : "text-foreground"}`}>
+                    {step.label}
+                  </span>
+                </div>
+                {i < workflow.length - 1 && (
+                  <ChevronRight size={18} className="text-muted-foreground/50 mx-1 shrink-0" />
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile: vertical */}
+          <div className="flex md:hidden flex-col items-center gap-2 max-w-xs mx-auto">
+            {workflow.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="flex items-center gap-4 w-full"
+              >
+                <div className={`flex items-center gap-3 flex-1 px-4 py-3 rounded-lg border ${step.highlight ? "bg-primary text-primary-foreground border-primary" : "bg-card border-border/50"}`}>
+                  <step.icon size={18} className={step.highlight ? "text-primary-foreground" : "text-primary"} />
+                  <span className={`text-sm font-medium ${step.highlight ? "text-primary-foreground" : "text-foreground"}`}>{step.label}</span>
+                </div>
+                {i < workflow.length - 1 && <div className="w-px h-3 bg-border mx-auto" />}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* ── Section 5: Current Focus ── */}
+      <section className="py-20 bg-primary/5 border-y border-border/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Current Scientific Focus</h2>
+            <div className="w-16 h-1 bg-accent mx-auto" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {currentFocus.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="flex items-start gap-3 bg-card border border-border/50 rounded-lg px-5 py-4"
+              >
+                <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
+                <p className="text-foreground text-sm leading-relaxed">{item}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 6: Join FIND Lab ── */}
+      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[url('/images/hero-bg.png')] bg-cover bg-center mix-blend-overlay" />
+        <div className="container mx-auto px-4 relative z-10 max-w-3xl text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">Join FIND Lab</h2>
+            <p className="text-base md:text-lg text-primary-foreground/80 mb-4 leading-relaxed">
+              FIND Lab welcomes motivated Master's students, PhD students, visiting researchers, and collaborators interested in nanofabrication, spintronics, functional materials, nanostructures, and emerging nanoelectronic devices.
+            </p>
+            <p className="text-sm text-primary-foreground/65 mb-10 leading-relaxed">
+              Candidates from physics, materials science, electrical engineering, electronics, mechanical engineering, and related disciplines are encouraged to contact the laboratory.
+            </p>
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Link href="/join">View Opportunities <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Section 7: Latest Updates ── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Latest Updates</h2>
+            <div className="w-16 h-1 bg-accent mx-auto" />
+          </motion.div>
+
+          <div className="space-y-4">
+            {updates.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex items-start gap-5 border-b border-border/40 pb-5 last:border-0 last:pb-0"
+              >
+                <div className="flex items-center gap-2 text-muted-foreground shrink-0 pt-0.5">
+                  <Calendar size={15} />
+                  <span className="text-xs font-medium uppercase tracking-wide">{item.date}</span>
+                </div>
+                <p className="text-foreground text-sm leading-relaxed">{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
