@@ -77,7 +77,10 @@ export default function Home() {
                 className="text-lg md:text-xl text-white/80 mb-2 font-light"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
               >
-                Functional Innovations in Nano Devices Laboratory
+                <span className="text-accent font-semibold">F</span>unctional{" "}
+                <span className="text-accent font-semibold">I</span>nnovations in{" "}
+                <span className="text-accent font-semibold">N</span>ano{" "}
+                <span className="text-accent font-semibold">D</span>evices Laboratory
               </motion.p>
 
               <motion.p
@@ -114,14 +117,14 @@ export default function Home() {
               />
 
               <motion.p
-                className="text-xl md:text-2xl font-serif italic text-white/90 leading-snug text-center lg:text-left"
+                className="text-xl md:text-2xl font-serif italic text-foreground leading-snug text-center lg:text-left"
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
               >
                 Engineering nanoscale interfaces.<br /> Enabling functional devices.
               </motion.p>
 
               <motion.p
-                className="text-sm text-white/70 leading-relaxed text-center lg:text-left"
+                className="text-sm text-muted-foreground leading-relaxed text-center lg:text-left"
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}
               >
                 FIND Lab explores how nanoscale interfaces, functional materials, nanostructures, and device architectures can be integrated through advanced nanofabrication to realize new functionalities in nanoelectronic devices.
