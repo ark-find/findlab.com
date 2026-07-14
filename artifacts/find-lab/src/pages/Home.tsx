@@ -120,7 +120,7 @@ export default function Home() {
                 className="text-xl md:text-2xl font-serif italic text-foreground leading-snug text-center lg:text-left"
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
               >
-                Engineering nanoscale interfaces.<br /> Enabling functional devices.
+                Engineering Nano Devices for Emerging Functionalities.
               </motion.p>
 
               <motion.p
