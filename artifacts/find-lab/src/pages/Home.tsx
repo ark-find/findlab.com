@@ -81,30 +81,16 @@ export default function Home() {
               </motion.p>
 
               <motion.p
-                className="text-base text-white/60 mb-6 font-light"
+                className="text-base text-white/60 mb-10 font-light"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
               >
                 International College of Semiconductor Technology<br />
                 National Yang Ming Chiao Tung University
               </motion.p>
 
-              <motion.p
-                className="text-xl md:text-2xl font-serif italic text-white/90 mb-4 leading-snug"
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
-              >
-                Engineering nanoscale interfaces.<br className="hidden sm:block" /> Enabling functional devices.
-              </motion.p>
-
-              <motion.p
-                className="text-base text-white/70 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
-              >
-                FIND Lab explores how nanoscale interfaces, functional materials, nanostructures, and device architectures can be integrated through advanced nanofabrication to realize new functionalities in nanoelectronic devices.
-              </motion.p>
-
               <motion.div
                 className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3"
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
               >
                 <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
                   <Link href="/research">Explore Research <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -118,17 +104,29 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Right: FIND Lab logo */}
-            <motion.div
-              className="flex-1 w-full max-w-xs lg:max-w-sm flex items-center justify-center"
-              initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <img
+            {/* Right: FIND Lab logo + tagline + description */}
+            <div className="flex-1 w-full max-w-sm lg:max-w-md flex flex-col items-center lg:items-start gap-6">
+              <motion.img
                 src="/images/find-lab-logo.png"
                 alt="FIND Lab logo"
-                className="w-full drop-shadow-2xl"
+                className="w-64 lg:w-72 drop-shadow-2xl"
+                initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
               />
-            </motion.div>
+
+              <motion.p
+                className="text-xl md:text-2xl font-serif italic text-white/90 leading-snug text-center lg:text-left"
+                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
+              >
+                Engineering nanoscale interfaces.<br /> Enabling functional devices.
+              </motion.p>
+
+              <motion.p
+                className="text-sm text-white/70 leading-relaxed text-center lg:text-left"
+                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}
+              >
+                FIND Lab explores how nanoscale interfaces, functional materials, nanostructures, and device architectures can be integrated through advanced nanofabrication to realize new functionalities in nanoelectronic devices.
+              </motion.p>
+            </div>
 
           </div>
         </div>
