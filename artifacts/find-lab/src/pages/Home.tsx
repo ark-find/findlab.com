@@ -118,15 +118,30 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Right: FIND Lab logo */}
+            {/* Right: FIND Lab logo — immersive floating glow */}
             <motion.div
-              className="flex-1 w-full max-w-xs lg:max-w-sm flex items-center justify-center"
-              initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 0.4 }}
+              className="flex-1 w-full max-w-xs lg:max-w-sm flex items-center justify-center relative"
+              initial={{ opacity: 0, scale: 0.88 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.4 }}
             >
-              <img
+              {/* Outer glow ring */}
+              <motion.div
+                className="absolute w-72 h-72 rounded-full bg-primary/20 blur-3xl"
+                animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.55, 0.3] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
+              {/* Inner accent glow */}
+              <motion.div
+                className="absolute w-48 h-48 rounded-full bg-accent/15 blur-2xl"
+                animate={{ scale: [1.1, 1, 1.1], opacity: [0.2, 0.4, 0.2] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              />
+              {/* Floating logo */}
+              <motion.img
                 src="/images/find-lab-logo.png"
                 alt="FIND Lab logo"
-                className="w-full drop-shadow-2xl"
+                className="relative z-10 w-full filter drop-shadow-[0_0_32px_rgba(99,155,255,0.45)]"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
             </motion.div>
 
