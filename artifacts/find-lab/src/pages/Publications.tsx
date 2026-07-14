@@ -511,10 +511,13 @@ export default function Publications() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-30px" }}
                         transition={{ duration: 0.3, delay: Math.min(index * 0.03, 0.25) }}
-                        className="flex items-start gap-3 py-4 px-2 hover:bg-muted/40 rounded-lg transition-colors"
+                        className="relative flex items-start gap-3 py-4 px-2 hover:bg-muted/40 rounded-lg transition-colors"
                       >
-                        <span className={`shrink-0 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mt-0.5 ${talkTypeBadge[talk.type]}`}>
-                          {talk.type === "invited" ? "Invited" : "Contributed"}
+                        <span
+                          className="shrink-0 text-sm font-bold min-w-[24px] text-right select-none mt-0.5"
+                          style={{ color: "#c9973a" }}
+                        >
+                          {talks.length - index}.
                         </span>
                         <div className="flex-1">
                           <p className="text-[13.5px] text-foreground leading-relaxed">{talk.text}</p>
@@ -550,21 +553,14 @@ export default function Publications() {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, margin: "-30px" }}
                           transition={{ duration: 0.3, delay: Math.min(index * 0.04, 0.25) }}
-                          className="relative flex items-start gap-4 py-5 px-2 hover:bg-muted/40 rounded-lg transition-colors"
+                          className="flex items-start gap-3 py-5 px-2 hover:bg-muted/40 rounded-lg transition-colors"
                         >
                           <span
-                            className="absolute left-2 top-[22px] text-base font-bold min-w-[22px] text-right select-none"
+                            className="shrink-0 text-sm font-bold min-w-[24px] text-right select-none mt-0.5"
                             style={{ color: "#c9973a" }}
                           >
                             {number}.
                           </span>
-
-                          <div
-                            className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-[10px] font-extrabold text-center leading-tight tracking-wide ml-7 mt-0.5 ${badgeClasses[paper.badge]}`}
-                          >
-                            {paper.badgeLabel}
-                          </div>
-
                           <div className="flex-1 min-w-0">
                             <p className="text-[14px] font-bold text-[#0a1628] dark:text-foreground leading-snug mb-1.5">
                               {paper.title}
