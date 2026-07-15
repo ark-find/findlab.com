@@ -89,7 +89,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p
-                className="text-lg md:text-xl mb-2 text-foreground font-semibold"
+                className="text-lg md:text-xl mb-2 text-foreground font-semibold border-t-[color:var(--color-amber-400)] border-r-[color:var(--color-amber-400)] border-b-[color:var(--color-amber-400)] border-l-[color:var(--color-amber-400)]"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
               >
                 <span className="text-accent font-bold">F</span>unctional{" "}
