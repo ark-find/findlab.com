@@ -1,22 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
   <rect width="220" height="80" fill="white"/>
-  <!-- Circular emblem -->
-  <circle cx="36" cy="40" r="28" fill="#8B0000" opacity="0.08"/>
-  <circle cx="36" cy="40" r="22" fill="none" stroke="#8B0000" stroke-width="1.5"/>
-  <circle cx="36" cy="40" r="14" fill="none" stroke="#8B0000" stroke-width="0.8"/>
-  <!-- Sun rays -->
-  <line x1="36" y1="18" x2="36" y2="14" stroke="#8B0000" stroke-width="1.5"/>
-  <line x1="36" y1="62" x2="36" y2="66" stroke="#8B0000" stroke-width="1.5"/>
-  <line x1="14" y1="40" x2="10" y2="40" stroke="#8B0000" stroke-width="1.5"/>
-  <line x1="58" y1="40" x2="62" y2="40" stroke="#8B0000" stroke-width="1.5"/>
-  <line x1="20.5" y1="24.5" x2="17.6" y2="21.6" stroke="#8B0000" stroke-width="1.5"/>
-  <line x1="51.5" y1="55.5" x2="54.4" y2="58.4" stroke="#8B0000" stroke-width="1.5"/>
-  <line x1="51.5" y1="24.5" x2="54.4" y2="21.6" stroke="#8B0000" stroke-width="1.5"/>
-  <line x1="20.5" y1="55.5" x2="17.6" y2="58.4" stroke="#8B0000" stroke-width="1.5"/>
-  <!-- NTU initials -->
-  <text x="27" y="45" font-family="Times New Roman, serif" font-weight="bold" font-size="13" fill="#8B0000">NTU</text>
+  <!-- Red accent bar -->
+  <rect x="0" y="0" width="7" height="80" fill="#D71920"/>
+  <!-- NTU bold text -->
+  <text x="22" y="38" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="30" fill="#D71920" letter-spacing="2">NTU</text>
   <!-- Full name -->
-  <text x="72" y="28" font-family="Times New Roman, serif" font-weight="bold" font-size="10" fill="#8B0000">NATIONAL TAIWAN</text>
-  <text x="72" y="42" font-family="Times New Roman, serif" font-weight="bold" font-size="10" fill="#8B0000">UNIVERSITY</text>
-  <text x="72" y="58" font-family="Arial, sans-serif" font-size="7.5" fill="#555">國立臺灣大學</text>
+  <text x="22" y="52" font-family="Arial, sans-serif" font-size="7.8" fill="#444" letter-spacing="0.2">Nanyang Technological</text>
+  <text x="22" y="63" font-family="Arial, sans-serif" font-size="7.8" fill="#444" letter-spacing="0.2">University</text>
+  <text x="22" y="74" font-family="Arial, sans-serif" font-size="6.8" fill="#D71920" font-weight="bold" letter-spacing="1">SINGAPORE</text>
 </svg>
