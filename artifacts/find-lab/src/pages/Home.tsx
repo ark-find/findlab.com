@@ -43,16 +43,6 @@ const currentFocus = [
 
 const updates = [
   {
-    date: "Jul 2025",
-    text: "Prof. Akhil K. Ramesh joined the International College of Semiconductor Technology (ICST), National Yang Ming Chiao Tung University (NYCU), Taiwan as Assistant Professor.",
-    badge: "New Appointment",
-  },
-  {
-    date: "Jul 2025",
-    text: "FIND Lab (Functional Innovations in Nano Devices Laboratory) established at ICST NYCU — the lab was set up and operational ahead of the first recruitment cycle.",
-    badge: "Lab Established",
-  },
-  {
     date: "2026",
     text: "Recruitment open for motivated Master's and PhD students for Fall 2026 intake.",
     badge: "Hiring Open",
@@ -61,6 +51,16 @@ const updates = [
     date: "2026",
     text: "FIND Lab research website launched.",
     badge: "Website",
+  },
+  {
+    date: "2026",
+    text: "FIND Lab (Functional Innovations in Nano Devices Laboratory) established at ICST NYCU — the lab was set up and operational ahead of the first recruitment cycle.",
+    badge: "Lab Established",
+  },
+  {
+    date: "2026",
+    text: "Prof. Akhil K. Ramesh joined the International College of Semiconductor Technology (ICST), National Yang Ming Chiao Tung University (NYCU), Taiwan as Assistant Professor.",
+    badge: "New Appointment",
   },
 ];
 

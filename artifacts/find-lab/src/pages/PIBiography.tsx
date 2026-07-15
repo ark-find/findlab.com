@@ -10,19 +10,19 @@ const education = [
     degree: "Ph.D. — Spintronic Devices for Sensing & Memory Applications",
     institution: "Indian Institute of Technology (IIT) Delhi & National Yang Ming Chiao Tung University (NYCU), Taiwan",
     period: "2017 – 2022",
-    note: "IITD–NYCU Joint Degree Program · Advisors: Prof. Pushparaj Singh (IIT Delhi) & Prof. Yuan-Chieh Tseng (NYCU) · GPA 8/10",
+    note: "IITD–NYCU Joint Degree Program",
   },
   {
     degree: "M.Tech in Electronics — VLSI & Embedded Systems",
     institution: "Cochin University of Science and Technology (CUSAT), Kerala, India",
     period: "2013 – 2015",
-    note: "GPA 9.24 / 10",
+    note: "",
   },
   {
     degree: "B.Tech in Electronics and Instrumentation Engineering",
     institution: "Cochin University of Science and Technology (CUSAT), Kerala, India",
     period: "2008 – 2012",
-    note: "69.64%",
+    note: "",
   },
 ];
 
@@ -30,44 +30,32 @@ const positions = [
   {
     title: "Assistant Professor & PI, FIND Lab",
     org: "International College of Semiconductor Technology (ICST), NYCU, Taiwan",
-    period: "Jul 2025 – Present",
+    period: "2026 – Present",
     current: true,
     note: "Established FIND Lab ahead of first student recruitment cycle.",
   },
   {
     title: "Research Fellow",
     org: "NTI–NTU Corporate Lab, Nanyang Technological University, Singapore",
-    period: "May 2024 – 2025",
+    period: "2024 – 2026",
     current: false,
   },
   {
     title: "Research Scientist",
     org: "Temasek Lab, Nanyang Technological University, Singapore",
-    period: "Aug 2022 – May 2024",
-    current: false,
-  },
-  {
-    title: "Graduate Teaching Assistant",
-    org: "International College of Semiconductor Technology, NYCU, Taiwan",
-    period: "Sep 2020 – Jan 2021",
-    current: false,
-  },
-  {
-    title: "Graduate Research Student (PhD)",
-    org: "IIT Delhi & NYCU Taiwan",
-    period: "Jul 2017 – Feb 2022",
+    period: "2022 – 2024",
     current: false,
   },
   {
     title: "Project Associate",
     org: "Center for Applied Research in Electronics (CARE), IIT Delhi, India",
-    period: "Jan 2017 – Jul 2017",
+    period: "2017",
     current: false,
   },
   {
     title: "Assistant Professor",
     org: "Department of ECE, College of Engineering Munnar, Kerala, India",
-    period: "Jul 2015 – Jan 2017",
+    period: "2015 – 2017",
     current: false,
   },
 ];
@@ -80,21 +68,31 @@ const awards = [
   { text: "2nd Prize, National Level Science Exhibition", year: "Oct 2006" },
 ];
 
-const interests = [
-  { label: "Spintronics & Magnetic Memories", desc: "STT-MRAM, magnetic tunnel junctions, CoFeB/MgO interface engineering, PMA optimization" },
-  { label: "Flexible & Wearable Devices", desc: "Electroless deposition of NiFe on flexible substrates, polydopamine-assisted processes, magnetostrictive strain sensors" },
-  { label: "MEMS & Sensing", desc: "Spintronic MEMS pressure sensors, piezoresistive sensors, AHE biosensors, MoS₂-based sensing elements" },
-  { label: "Functional Nanomaterials", desc: "MoS₂, FeRh phase transitions, ZnO nanostructures, photoelectrochemical applications" },
-  { label: "Nanofabrication", desc: "RF/DC sputtering, e-beam lithography, RIE/IBE, TEM, XPS, AFM, VSM/SQUID characterization" },
-  { label: "Computational Modelling", desc: "Atomistic & micromagnetic simulation (OOMMF, Vampire), FEM device modelling (COMSOL), TCAD" },
-];
-
-const reviewer = [
-  "Journal of Micromechanics and Microengineering (JMM)",
-  "Microelectronic Engineering",
-  "Journal of Physics Communications",
-  "Discover Nano",
-  "SPIN",
+const publishers = [
+  {
+    abbr: "ACS",
+    full: "American Chemical Society",
+    color: "#1F3864",
+    desc: "ACS Applied Materials & Interfaces, ACS Nano, ACS Applied Electronic Materials",
+  },
+  {
+    abbr: "Elsevier",
+    full: "Elsevier",
+    color: "#FF6600",
+    desc: "Microelectronic Engineering, Materials Chemistry & Physics, Procedia Technology",
+  },
+  {
+    abbr: "IOP",
+    full: "IOP Publishing",
+    color: "#005B8E",
+    desc: "Journal of Physics D, Nanotechnology, Journal of Physics Communications",
+  },
+  {
+    abbr: "IEEE",
+    full: "Institute of Electrical and Electronics Engineers",
+    color: "#00629B",
+    desc: "IEEE Sensors Journal, IEEE Transactions on Electron Devices, IEEE Conferences",
+  },
 ];
 
 export default function PIBiography() {
@@ -193,7 +191,7 @@ export default function PIBiography() {
                   <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-0.5">{ed.period}</p>
                   <p className="font-semibold text-foreground leading-snug">{ed.degree}</p>
                   <p className="text-sm text-primary mt-0.5">{ed.institution}</p>
-                  <p className="text-sm text-muted-foreground mt-1 italic">{ed.note}</p>
+                  {ed.note && <p className="text-sm text-muted-foreground mt-1 italic">{ed.note}</p>}
                 </motion.div>
               ))}
             </div>
@@ -237,37 +235,6 @@ export default function PIBiography() {
                   {"note" in pos && pos.note && (
                     <p className="text-xs text-muted-foreground italic mt-1">{pos.note}</p>
                   )}
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
-
-          {/* Research Interests */}
-          <motion.section
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                <BookOpen size={17} className="text-primary" />
-              </div>
-              <h2 className="text-xl font-serif font-bold text-foreground">Research Interests</h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {interests.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className="bg-card border border-border/50 rounded-lg px-4 py-3 hover:border-primary/30 transition-colors"
-                >
-                  <p className="text-sm font-semibold text-foreground mb-0.5">{item.label}</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -321,21 +288,26 @@ export default function PIBiography() {
               <h2 className="text-xl font-serif font-bold text-foreground">Editorial &amp; Review Service</h2>
             </div>
 
-            <ul className="space-y-2">
-              {reviewer.map((j, i) => (
-                <motion.li
+            <p className="text-sm text-muted-foreground mb-5">Active peer reviewer for journals published by the following societies and publishers:</p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {publishers.map((pub, i) => (
+                <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="flex items-center gap-3 text-sm text-foreground"
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="bg-card border border-border/50 rounded-lg overflow-hidden hover:shadow-sm transition-shadow"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                  Peer Reviewer — <span className="italic text-muted-foreground">{j}</span>
-                </motion.li>
+                  <div className="h-1.5 w-full" style={{ backgroundColor: pub.color }} />
+                  <div className="px-3 py-3">
+                    <p className="font-black text-lg leading-none mb-1" style={{ color: pub.color }}>{pub.abbr}</p>
+                    <p className="text-[10px] text-muted-foreground leading-relaxed">{pub.desc}</p>
+                  </div>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </motion.section>
 
         </div>
