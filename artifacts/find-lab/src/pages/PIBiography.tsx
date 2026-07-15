@@ -69,30 +69,10 @@ const awards = [
 ];
 
 const publishers = [
-  {
-    abbr: "ACS",
-    full: "American Chemical Society",
-    color: "#1F3864",
-    desc: "ACS Applied Materials & Interfaces, ACS Nano, ACS Applied Electronic Materials",
-  },
-  {
-    abbr: "Elsevier",
-    full: "Elsevier",
-    color: "#FF6600",
-    desc: "Microelectronic Engineering, Materials Chemistry & Physics, Procedia Technology",
-  },
-  {
-    abbr: "IOP",
-    full: "IOP Publishing",
-    color: "#005B8E",
-    desc: "Journal of Physics D, Nanotechnology, Journal of Physics Communications",
-  },
-  {
-    abbr: "IEEE",
-    full: "Institute of Electrical and Electronics Engineers",
-    color: "#00629B",
-    desc: "IEEE Sensors Journal, IEEE Transactions on Electron Devices, IEEE Conferences",
-  },
+  { abbr: "ACS",     full: "American Chemical Society",                  color: "#1F3864" },
+  { abbr: "Elsevier",full: "Elsevier",                                   color: "#FF6600" },
+  { abbr: "IOP",     full: "IOP Publishing",                             color: "#005B8E" },
+  { abbr: "IEEE",    full: "Institute of Electrical and Electronics Engineers", color: "#00629B" },
 ];
 
 export default function PIBiography() {
@@ -301,9 +281,9 @@ export default function PIBiography() {
                   className="bg-card border border-border/50 rounded-lg overflow-hidden hover:shadow-sm transition-shadow"
                 >
                   <div className="h-1.5 w-full" style={{ backgroundColor: pub.color }} />
-                  <div className="px-3 py-3">
-                    <p className="font-black text-lg leading-none mb-1" style={{ color: pub.color }}>{pub.abbr}</p>
-                    <p className="text-[10px] text-muted-foreground leading-relaxed">{pub.desc}</p>
+                  <div className="px-3 py-4">
+                    <p className="font-black text-xl leading-none mb-1.5" style={{ color: pub.color }}>{pub.abbr}</p>
+                    <p className="text-[10px] text-muted-foreground leading-relaxed">{pub.full}</p>
                   </div>
                 </motion.div>
               ))}

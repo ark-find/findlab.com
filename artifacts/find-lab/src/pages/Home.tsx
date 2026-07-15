@@ -92,10 +92,10 @@ export default function Home() {
                 className="text-lg md:text-xl mb-2 text-foreground font-semibold"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
               >
-                <span className="text-primary font-bold">F</span>unctional{" "}
-                <span className="text-primary font-bold">I</span>nnovations in{" "}
-                <span className="text-primary font-bold">N</span>ano{" "}
-                <span className="text-primary font-bold">D</span>evices Laboratory
+                <span className="text-accent font-bold">F</span>unctional{" "}
+                <span className="text-accent font-bold">I</span>nnovations in{" "}
+                <span className="text-accent font-bold">N</span>ano{" "}
+                <span className="text-accent font-bold">D</span>evices Laboratory
               </motion.p>
 
               <motion.p
