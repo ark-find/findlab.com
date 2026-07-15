@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none">
+  <rect width="220" height="80" fill="white"/>
+  <rect x="0" y="0" width="7" height="80" fill="#003366"/>
+  <text x="22" y="38" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="24" fill="#003366" letter-spacing="2">IITD</text>
+  <text x="22" y="52" font-family="Arial, sans-serif" font-size="7.8" fill="#444" letter-spacing="0.2">Indian Institute of</text>
+  <text x="22" y="63" font-family="Arial, sans-serif" font-size="7.8" fill="#444" letter-spacing="0.2">Technology Delhi</text>
+  <text x="22" y="74" font-family="Arial, sans-serif" font-size="6.8" fill="#003366" font-weight="bold" letter-spacing="1">INDIA · Est. 1961</text>
+</svg>

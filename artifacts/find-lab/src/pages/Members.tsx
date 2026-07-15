@@ -55,6 +55,9 @@ export default function Members() {
                     ark.st08@nycu.edu.tw
                   </a>
                 </div>
+                <Button asChild variant="outline" size="sm" className="w-full mt-2">
+                  <Link href="/pi-biography">Full Biography &amp; CV →</Link>
+                </Button>
               </div>
             </motion.div>
 

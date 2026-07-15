@@ -8,6 +8,7 @@ import Publications from "@/pages/Publications";
 import Facilities from "@/pages/Facilities";
 import Join from "@/pages/Join";
 import Contact from "@/pages/Contact";
+import PIBiography from "@/pages/PIBiography";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -25,6 +26,7 @@ function Router() {
           <Route path="/facilities" component={Facilities} />
           <Route path="/join" component={Join} />
           <Route path="/contact" component={Contact} />
+          <Route path="/pi-biography" component={PIBiography} />
           <Route component={NotFound} />
         </Switch>
       </main>

@@ -68,7 +68,7 @@ export default function Home() {
                 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-3 tracking-tight leading-tight"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
               >
-                FIND Lab
+                <span className="text-primary">F</span><span className="text-primary">I</span><span className="text-primary">N</span><span className="text-primary">D</span>{" "}Lab
               </motion.h1>
 
               <motion.p
@@ -264,7 +264,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 logo: "/images/logo-itri.svg",
@@ -286,6 +286,13 @@ export default function Home() {
                 full: "Indian Institute of Technology Kharagpur",
                 country: "India",
                 accent: "#660000",
+              },
+              {
+                logo: "/images/logo-iitd.svg",
+                name: "IIT Delhi",
+                full: "Indian Institute of Technology Delhi",
+                country: "India",
+                accent: "#003366",
               },
             ].map((collab, i) => (
               <motion.div
