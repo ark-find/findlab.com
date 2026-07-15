@@ -59,30 +59,30 @@ export default function Home() {
             {/* Left: text */}
             <div className="flex-1 text-center lg:text-left">
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
-                <span className="inline-block py-1 px-3 rounded-full bg-white/15 text-white border border-white/25 backdrop-blur-sm text-xs font-medium mb-6 uppercase tracking-widest">
+                <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-medium mb-6 uppercase tracking-widest">
                   ICST · National Yang Ming Chiao Tung University · Taiwan
                 </span>
               </motion.div>
 
               <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-3 tracking-tight leading-tight drop-shadow-lg"
+                className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-3 tracking-tight leading-tight"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
               >
                 FIND Lab
               </motion.h1>
 
               <motion.p
-                className="text-lg md:text-xl mb-2 text-[color:var(--color-white)] border-t-[color:var(--color-white)] border-r-[color:var(--color-white)] border-b-[color:var(--color-white)] border-l-[color:var(--color-white)] font-bold"
+                className="text-lg md:text-xl mb-2 text-foreground font-semibold"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
               >
-                <span className="text-accent font-semibold">F</span>unctional{" "}
-                <span className="text-accent font-semibold">I</span>nnovations in{" "}
-                <span className="text-accent font-semibold">N</span>ano{" "}
-                <span className="text-accent font-semibold">D</span>evices Laboratory
+                <span className="text-accent font-bold">F</span>unctional{" "}
+                <span className="text-accent font-bold">I</span>nnovations in{" "}
+                <span className="text-accent font-bold">N</span>ano{" "}
+                <span className="text-accent font-bold">D</span>evices Laboratory
               </motion.p>
 
               <motion.p
-                className="text-base mb-10 font-normal text-[color:var(--color-white)]"
+                className="text-base mb-10 font-normal text-muted-foreground"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
               >
                 International College of Semiconductor Technology<br />
@@ -96,10 +96,10 @@ export default function Home() {
                 <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
                   <Link href="/research">Explore Research <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="bg-white/10 text-white border-white/25 hover:bg-white/20 backdrop-blur-sm w-full sm:w-auto">
+                <Button asChild size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 w-full sm:w-auto">
                   <Link href="/join">Join FIND Lab</Link>
                 </Button>
-                <Button asChild variant="link" className="text-white/70 hover:text-white w-full sm:w-auto">
+                <Button asChild variant="link" className="text-muted-foreground hover:text-primary w-full sm:w-auto">
                   <Link href="/publications">Research Contributions <ChevronRight className="ml-1 h-4 w-4" /></Link>
                 </Button>
               </motion.div>
