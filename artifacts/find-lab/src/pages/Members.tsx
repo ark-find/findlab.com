@@ -40,7 +40,7 @@ export default function Members() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <h3 className="font-serif font-bold text-lg">Dr. Akhil K. Ramesh</h3>
-                  <p className="text-sm opacity-90">Director, FIND Lab</p>
+                  <p className="text-sm opacity-90">Assistant Professor, ICST NYCU</p>
                 </div>
               </div>
 
