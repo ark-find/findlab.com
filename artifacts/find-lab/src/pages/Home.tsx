@@ -375,14 +375,6 @@ export default function Home() {
                     <Calendar size={13} />
                     <span className="text-[11px] font-semibold uppercase tracking-wide">{item.date}</span>
                   </div>
-                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                    i === 0 ? "bg-accent/15 text-accent" :
-                    i === 1 ? "bg-primary/10 text-primary" :
-                    i === 2 ? "bg-green-100 text-green-700" :
-                    "bg-muted text-muted-foreground"
-                  }`}>
-                    {item.badge}
-                  </span>
                 </div>
                 <p className="text-foreground text-sm leading-relaxed pt-0.5">{item.text}</p>
               </motion.div>
