@@ -30,8 +30,9 @@ const positions = [
   {
     title: "Assistant Professor & PI, FIND Lab",
     org: "International College of Semiconductor Technology (ICST), NYCU, Taiwan",
-    period: "2025 – Present",
+    period: "Jul 2025 – Present",
     current: true,
+    note: "Established FIND Lab ahead of first student recruitment cycle.",
   },
   {
     title: "Research Fellow",
@@ -233,6 +234,9 @@ export default function PIBiography() {
                   </div>
                   <p className="text-sm text-primary mt-0.5">{pos.org}</p>
                   <p className="text-[11px] font-medium uppercase tracking-widest text-muted-foreground mt-0.5">{pos.period}</p>
+                  {"note" in pos && pos.note && (
+                    <p className="text-xs text-muted-foreground italic mt-1">{pos.note}</p>
+                  )}
                 </motion.div>
               ))}
             </div>

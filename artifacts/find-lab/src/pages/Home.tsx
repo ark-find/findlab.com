@@ -42,9 +42,26 @@ const currentFocus = [
 ];
 
 const updates = [
-  { date: "2025", text: "FIND Lab established at ICST, National Yang Ming Chiao Tung University (NYCU), Taiwan." },
-  { date: "2026", text: "Recruitment open for motivated Master's and PhD students for Fall 2026." },
-  { date: "2026", text: "FIND Lab research website launched." },
+  {
+    date: "Jul 2025",
+    text: "Prof. Akhil K. Ramesh joined the International College of Semiconductor Technology (ICST), National Yang Ming Chiao Tung University (NYCU), Taiwan as Assistant Professor.",
+    badge: "New Appointment",
+  },
+  {
+    date: "Jul 2025",
+    text: "FIND Lab (Functional Innovations in Nano Devices Laboratory) established at ICST NYCU — the lab was set up and operational ahead of the first recruitment cycle.",
+    badge: "Lab Established",
+  },
+  {
+    date: "2026",
+    text: "Recruitment open for motivated Master's and PhD students for Fall 2026 intake.",
+    badge: "Hiring Open",
+  },
+  {
+    date: "2026",
+    text: "FIND Lab research website launched.",
+    badge: "Website",
+  },
 ];
 
 export default function Home() {
@@ -346,18 +363,28 @@ export default function Home() {
             <div className="w-16 h-1 bg-accent mx-auto" />
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-0 divide-y divide-border/40">
             {updates.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-start gap-5 border-b border-border/40 pb-5 last:border-0 last:pb-0"
+                className="flex items-start gap-5 py-5 first:pt-0 last:pb-0"
               >
-                <div className="flex items-center gap-2 text-muted-foreground shrink-0 pt-0.5">
-                  <Calendar size={15} />
-                  <span className="text-xs font-medium uppercase tracking-wide">{item.date}</span>
+                <div className="flex flex-col items-start gap-1.5 shrink-0 w-28">
+                  <div className="flex items-center gap-1.5 text-muted-foreground">
+                    <Calendar size={13} />
+                    <span className="text-[11px] font-semibold uppercase tracking-wide">{item.date}</span>
+                  </div>
+                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
+                    i === 0 ? "bg-accent/15 text-accent" :
+                    i === 1 ? "bg-primary/10 text-primary" :
+                    i === 2 ? "bg-green-100 text-green-700" :
+                    "bg-muted text-muted-foreground"
+                  }`}>
+                    {item.badge}
+                  </span>
                 </div>
-                <p className="text-foreground text-sm leading-relaxed">{item.text}</p>
+                <p className="text-foreground text-sm leading-relaxed pt-0.5">{item.text}</p>
               </motion.div>
             ))}
           </div>
