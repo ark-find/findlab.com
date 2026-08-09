@@ -44,7 +44,7 @@ const currentFocus = [
 const updates = [
   {
     date: "2026",
-    text: "Recruitment open for motivated Master's and PhD students for Fall 2026 intake.",
+    text: "Recruitment open for motivated Master's and PhD students for Spring 2027 intake.",
     badge: "Hiring Open",
   },
   {
@@ -87,10 +87,10 @@ export default function Home() {
                 className="text-lg md:text-xl mb-2 text-foreground font-semibold border-t-[color:var(--color-amber-400)] border-r-[color:var(--color-amber-400)] border-b-[color:var(--color-amber-400)] border-l-[color:var(--color-amber-400)]"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
               >
-                <span className="text-accent font-bold">F</span>unctional{" "}
-                <span className="text-accent font-bold">I</span>nnovations in{" "}
-                <span className="text-accent font-bold">N</span>ano{" "}
-                <span className="text-accent font-bold">D</span>evices Laboratory
+                <span className="text-primary bg-accent/80 px-1 rounded-sm font-bold">F</span>unctional{" "}
+                <span className="text-primary bg-accent/80 px-1 rounded-sm font-bold">I</span>nnovations in{" "}
+                <span className="text-primary bg-accent/80 px-1 rounded-sm font-bold">N</span>ano{" "}
+                <span className="text-primary bg-accent/80 px-1 rounded-sm font-bold">D</span>evices Laboratory
               </motion.p>
 
               <motion.p
@@ -133,12 +133,6 @@ export default function Home() {
                 Engineering Nano Devices for Emerging Functionalities.
               </motion.p>
 
-              <motion.p
-                className="text-sm text-muted-foreground leading-relaxed text-center lg:text-left"
-                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}
-              >
-                FIND Lab explores how nanoscale interfaces, functional materials, nanostructures, and device architectures can be integrated through advanced nanofabrication to realize new functionalities in nanoelectronic devices.
-              </motion.p>
             </div>
 
           </div>
@@ -167,49 +161,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      {/* ── Section 3: Research Directions ── */}
-      <section className="py-24 bg-secondary/40">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Research Directions</h2>
-            <div className="w-16 h-1 bg-accent mx-auto" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            {researchTiles.map((tile, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}
-              >
-                <Card className={`h-full border-border/50 hover:shadow-lg hover:border-primary/30 transition-all ${tile.featured ? "ring-1 ring-primary/30 bg-primary/5" : "bg-card"}`}>
-                  <CardContent className="p-7 flex flex-col gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${tile.featured ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"}`}>
-                      <tile.icon size={22} />
-                    </div>
-                    {tile.featured && (
-                      <span className="text-xs font-medium uppercase tracking-widest text-primary">Primary Focus</span>
-                    )}
-                    <h3 className={`font-serif font-bold text-foreground leading-snug ${tile.featured ? "text-xl" : "text-lg"}`}>
-                      {tile.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{tile.text}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary hover:bg-primary/5">
-              <Link href="/research">Explore Research <ArrowRight className="ml-2 h-4 w-4" /></Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-      {/* ── Section 4: Research Approach ── */}
+      {/* ── Section 3: Research Approach ── */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <motion.div
@@ -259,6 +211,49 @@ export default function Home() {
                 {i < workflow.length - 1 && <div className="w-px h-3 bg-border mx-auto" />}
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 4: Research Directions ── */}
+      <section className="py-24 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Research Directions</h2>
+            <div className="w-16 h-1 bg-accent mx-auto" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {researchTiles.map((tile, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}
+              >
+                <Card className={`h-full border-border/50 hover:shadow-lg hover:border-primary/30 transition-all ${tile.featured ? "ring-1 ring-primary/30 bg-primary/5" : "bg-card"}`}>
+                  <CardContent className="p-7 flex flex-col gap-4">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${tile.featured ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"}`}>
+                      <tile.icon size={22} />
+                    </div>
+                    {tile.featured && (
+                      <span className="text-xs font-medium uppercase tracking-widest text-primary">Primary Focus</span>
+                    )}
+                    <h3 className={`font-serif font-bold text-foreground leading-snug ${tile.featured ? "text-xl" : "text-lg"}`}>
+                      {tile.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{tile.text}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary hover:bg-primary/5">
+              <Link href="/research">Explore Research <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>
