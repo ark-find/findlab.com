@@ -120,8 +120,8 @@ export default function PIBiography() {
                 </span>
                 <span className="flex items-center gap-2">
                   <Mail size={13} className="text-primary" />
-                  <a href="mailto:ark.st08@nycu.edu.tw" className="hover:text-primary transition-colors">
-                    ark.st08@nycu.edu.tw
+                  <a href="mailto:ark@nycu.edu.tw" className="hover:text-primary transition-colors">
+                    ark@nycu.edu.tw
                   </a>
                 </span>
               </div>
@@ -132,7 +132,7 @@ export default function PIBiography() {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="sm" className="gap-2">
-                  <a href="mailto:ark.st08@nycu.edu.tw">
+                  <a href="mailto:ark@nycu.edu.tw">
                     <Mail size={14} /> Email
                   </a>
                 </Button>

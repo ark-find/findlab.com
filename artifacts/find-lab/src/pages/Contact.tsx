@@ -77,8 +77,8 @@ export default function Contact() {
                     <p className="text-muted-foreground text-sm mt-1 mb-2">
                       For recruitment or research inquiries:
                     </p>
-                    <a href="mailto:ark.st08@nycu.edu.tw" className="text-sm font-medium text-accent hover:underline">
-                      ark.st08@nycu.edu.tw
+                    <a href="mailto:ark@nycu.edu.tw" className="text-sm font-medium text-accent hover:underline">
+                      ark@nycu.edu.tw
                     </a>
                   </div>
                 </div>

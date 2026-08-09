@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, GraduationCap, Award, Users, UserPlus } from "lucide-react";
+import { Mail, MapPin, GraduationCap, Award, Users, UserPlus, Phone } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -47,13 +47,22 @@ export default function Members() {
               <div className="space-y-4">
                 <div className="flex items-start gap-3 text-muted-foreground">
                   <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm">International College of Semiconductor Technology (ICST), National Yang Ming Chiao Tung University (NYCU), Taiwan</span>
+                  <span className="text-sm">
+                    <span className="font-medium text-foreground">Office :</span>{" "}
+                    EF 467, Engineering Building 6,<br />
+                    National Yang Ming Chiao Tung University (NYCU),<br />
+                    1001 Ta Hsueh Road, Hsinchu, Taiwan 30010, ROC
+                  </span>
                 </div>
                 <div className="flex items-start gap-3 text-muted-foreground">
                   <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <a href="mailto:ark.st08@nycu.edu.tw" className="text-sm hover:text-primary transition-colors">
-                    ark.st08@nycu.edu.tw
+                  <a href="mailto:ark@nycu.edu.tw" className="text-sm hover:text-primary transition-colors">
+                    ark@nycu.edu.tw
                   </a>
+                </div>
+                <div className="flex items-start gap-3 text-muted-foreground">
+                  <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span className="text-sm">( ☎ ) +886-35712121 #55924</span>
                 </div>
                 <Button asChild variant="outline" size="sm" className="w-full mt-2">
                   <Link href="/pi-biography">Full Biography &amp; CV →</Link>

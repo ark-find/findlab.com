@@ -16,7 +16,6 @@ export function Footer() {
             </div>
             <p className="text-muted-foreground max-w-sm">
               Functional Innovations in Nano Devices Laboratory.
-              Engineering the interface between condensed matter physics and nanoelectronics.
             </p>
             <div className="pt-2">
               <p className="text-sm font-medium">Dr. Akhil K. Ramesh</p>

@@ -82,7 +82,8 @@ export default function Join() {
               "Lithography (laser interference, EBL, photolithography)",
               "Magnetotransport & electrical characterization",
               "Device fabrication & cleanroom experience",
-              "Computational methods in condensed matter (optional)"
+              "Computational methods in condensed matter (optional)",
+              "Biotechnology / Microbiology background interested in semiconductor industry are encouraged to apply"
             ].map((skill, i) => (
               <div key={i} className="flex items-start gap-3 p-4 border border-border/50 rounded-lg bg-card">
                 <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -100,8 +101,7 @@ export default function Join() {
         >
           <h2 className="text-2xl font-serif font-semibold mb-4">What We Offer</h2>
           <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            A collaborative research environment at the frontier of spintronics and nanodevice engineering, 
-            with access to state-of-the-art fabrication and characterization facilities at NYCU.
+            A collaborative research environment for developing emerging nanoelectronic devices, supported by advanced fabrication and characterization facilities at NYCU and major national research facilities like TSRI, NSRRC, and the Hsinchu Science Park—Taiwan’s “Silicon Valley”—at our doorstep. NYCU's location in Hsinchu places FIND Lab within one of the world's most concentrated semiconductor ecosystems, with close proximity to the semiconductor giants like TSMC, MediaTek, and Qualcomm
           </p>
           <div className="bg-background/10 backdrop-blur border border-white/20 rounded-lg p-6 max-w-xl mx-auto">
             <h3 className="font-semibold text-lg mb-2">How to Apply</h3>
@@ -109,11 +109,11 @@ export default function Join() {
               Send your CV, a brief statement of research interests, and transcripts directly to:
             </p>
             <a
-              href="mailto:ark.st08@nycu.edu.tw"
+              href="mailto:ark@nycu.edu.tw"
               className="inline-flex items-center gap-2 text-primary-foreground font-semibold text-base hover:underline mb-6"
             >
               <Mail className="w-4 h-4 shrink-0" />
-              ark.st08@nycu.edu.tw
+              ark@nycu.edu.tw
             </a>
             <div className="mt-2">
               <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto">
