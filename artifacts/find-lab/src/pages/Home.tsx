@@ -49,11 +49,6 @@ const updates = [
   },
   {
     date: "2026",
-    text: "FIND Lab research website launched.",
-    badge: "Website",
-  },
-  {
-    date: "2026",
     text: "FIND Lab (Functional Innovations in Nano Devices Laboratory) established at ICST NYCU — the lab was set up and operational ahead of the first recruitment cycle.",
     badge: "Lab Established",
   },
@@ -224,7 +219,7 @@ export default function Home() {
             <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Our Research Approach</h2>
             <div className="w-16 h-1 bg-accent mx-auto mb-6" />
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our research connects material selection, nanoscale architecture, fabrication, and physical measurement to establish clear structure–interface–function relationships in nanoelectronic devices.
+              We investigate emerging nanoelectronic devices by connecting material properties, nanoscale architecture, interfaces, and fabrication to establish structure–interface–function relationships that govern device behavior.
             </p>
           </motion.div>
 
@@ -277,7 +272,7 @@ export default function Home() {
             <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Collaborators</h2>
             <div className="w-16 h-1 bg-accent mx-auto mb-4" />
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-              FIND Lab maintains active research collaborations with leading institutions across Taiwan, Singapore, and India.
+              FIND Lab maintains active research collaborations with leading research groups around the globe.
             </p>
           </motion.div>
 

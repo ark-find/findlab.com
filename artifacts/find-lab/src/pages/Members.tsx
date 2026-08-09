@@ -61,7 +61,7 @@ export default function Members() {
               </div>
             </motion.div>
 
-            {/* Academic background + philosophy + vision */}
+            {/* Scientific philosophy */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -70,39 +70,11 @@ export default function Members() {
             >
               <section>
                 <h3 className="text-xl font-serif font-semibold mb-4 text-foreground flex items-center gap-2">
-                  <GraduationCap className="text-accent" /> Academic Background
-                </h3>
-                <ul className="space-y-4 text-muted-foreground">
-                  <li className="flex flex-col">
-                    <span className="font-medium text-foreground">Postdoctoral Research</span>
-                    <span>Flexible electronics and nanodevices</span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="font-medium text-foreground">Ph.D.</span>
-                    <span>Joint program, IIT Delhi &amp; NYCU Taiwan</span>
-                    <span className="text-sm italic">Focus: Spintronics and Nanofabrication</span>
-                  </li>
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="text-xl font-serif font-semibold mb-4 text-foreground flex items-center gap-2">
                   <Award className="text-accent" /> Scientific Philosophy
                 </h3>
-                <div className="prose prose-slate dark:prose-invert max-w-none text-muted-foreground text-sm leading-relaxed space-y-3">
+                <div className="prose prose-slate dark:prose-invert max-w-none text-muted-foreground text-sm leading-relaxed">
                   <p>
-                    The fundamental driver of functionality in modern nanodevices is the interface.
-                    Our research philosophy centers on interface-driven physics in nanoscale systems,
-                    where device functionality emerges directly from precise materials engineering.
-                  </p>
-                  <p>
-                    We aim to bridge the conceptual gap between condensed matter physics and applied nanoelectronics.
-                    By understanding the delicate interplay of charge, spin, and orbital degrees of freedom at
-                    heterostructure interfaces, we design and demonstrate scalable fabrication pathways for
-                    next-generation functional devices.
-                  </p>
-                  <p>
-                    Rigor, reproducibility, and physical insight form the foundation of our laboratory culture.
+                    Materials define functionality; interfaces govern interaction; and nanoscale architecture determines how these properties emerge in a device. At FIND Lab, we integrate materials engineering, device physics, nanostructure design, and advanced fabrication to translate these principles into emerging nanoelectronic devices
                   </p>
                 </div>
               </section>
