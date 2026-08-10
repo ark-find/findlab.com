@@ -61,11 +61,11 @@ const positions = [
 ];
 
 const awards = [
-  { text: "MediaTek Foundation Scholarship winner, NCTU Taiwan", year: "Nov 2019" },
-  { text: "Scholarship for Outstanding New Student Award, ICST NYCU Taiwan", year: "Sep 2019 – 2021" },
-  { text: "Research Scholar Travel Award, IIT Delhi", year: "Jan 2019" },
-  { text: "Listed among top 10 exhibits visited by President of India (H.E. Pratibha Patil) at the 34th Jawaharlal Nehru National Science Exhibition", year: "Dec 2007" },
-  { text: "2nd Prize, National Level Science Exhibition", year: "Oct 2006" },
+  { text: "TL@NTU Best Research Award (Bronze)", year: "2024" },
+  { text: "TL Innovation Grant 2023, Principal Investigator", year: "2023" },
+  { text: "MediaTek Foundation Fellowship", year: "2020" },
+  { text: "Outstanding New Student Scholarship", year: "2019" },
+  { text: "Second Prize, National Level Science Exhibition (Exhibit visited and appreciated by the Hon'ble President of India)", year: "2006" },
 ];
 
 const publishers = [
