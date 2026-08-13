@@ -173,6 +173,11 @@ const publications: Publication[] = [
 
 const talks: TalkItem[] = [
   {
+    text: "Keynote Speaker at International Conference on Emerging Trends in Microelectronics, Communication and Intelligent Systems (ETMCIS 2026), Pune",
+    year: 2026,
+    type: "invited",
+  },
+  {
     text: 'Invited Talk on "Spin Degree of Freedom Unlocks Nano to Quantum" at Material Science and Engineering Graduate Student Club, NTU Singapore',
     year: 2024,
     type: "invited",

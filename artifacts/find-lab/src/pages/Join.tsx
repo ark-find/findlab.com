@@ -55,7 +55,7 @@ export default function Join() {
               <CardContent className="p-8">
                 <h2 className="text-2xl font-serif font-semibold mb-4 text-primary">Preferred Backgrounds</h2>
                 <ul className="space-y-3">
-                  {["Physics", "Electrical Engineering", "Materials Science", "Nanotechnology"].map((bg) => (
+                  {["Physics", "Electronics", "Materials Science", "Nanotechnology", "Mechatronics"].map((bg) => (
                     <li key={bg} className="flex items-center gap-3 text-muted-foreground">
                       <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                       <span>{bg}</span>
