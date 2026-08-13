@@ -27,7 +27,7 @@ if (!basePath) {
 }
 
 export default defineConfig({
-  base: '/findlab/',
+  base: basePath.endsWith("/") ? basePath : `${basePath}/`,
   plugins: [
     react(),
     tailwindcss(),
