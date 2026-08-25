@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, ChevronRight, Zap, Atom, Layers, Cpu, FlaskConical, MoveRight, MoveDown, Calendar } from "lucide-react";
+import { ArrowRight, ChevronRight, Zap, Atom, Layers, Cpu, FlaskConical, MoveRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { HeroBackground } from "@/components/hero/HeroBackground";
@@ -153,49 +153,11 @@ export default function Home() {
 
           <motion.div
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}
-            className="max-w-3xl mx-auto mt-16 text-center"
+            className="rounded-xl border-l-4 border-accent bg-accent/5 px-8 py-7 max-w-3xl mx-auto text-center"
           >
-            <div className="flex flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="rounded-2xl border border-primary/15 bg-primary/5 px-8 py-7 w-full"
-              >
-                <p className="text-2xl md:text-4xl font-serif font-bold text-primary leading-tight">
-                  Curiosity begins
-                  <br />
-                  <span className="text-foreground">with a question.</span>
-                </p>
-              </motion.div>
-
-              <MoveDown className="my-4 text-accent" size={26} strokeWidth={1.5} />
-
-              <motion.div
-                initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.15 }}
-                className="rounded-2xl border border-accent/30 bg-accent/10 px-8 py-7 w-full"
-              >
-                <p className="text-2xl md:text-4xl font-serif font-bold text-foreground leading-tight">
-                  Research transforms questions
-                  <br />
-                  <span className="text-primary">into understanding.</span>
-                </p>
-              </motion.div>
-
-              <MoveDown className="my-4 text-accent" size={26} strokeWidth={1.5} />
-
-              <motion.div
-                initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="rounded-2xl bg-primary px-8 py-8 w-full shadow-lg"
-              >
-                <p className="text-3xl md:text-5xl font-serif font-bold text-primary-foreground leading-tight">
-                  Understanding becomes
-                  <br />
-                  <span className="text-accent">innovation.</span>
-                </p>
-              </motion.div>
-            </div>
+            <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed">
+              “Curiosity begins with a question. Research transforms questions into understanding. Understanding becomes innovation.”
+            </p>
           </motion.div>
         </div>
       </section>

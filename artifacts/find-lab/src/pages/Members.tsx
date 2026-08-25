@@ -83,7 +83,10 @@ export default function Members() {
                 </h3>
                 <div className="prose prose-slate dark:prose-invert max-w-none text-muted-foreground text-sm leading-relaxed">
                   <p>
-                    Materials define functionality; interfaces govern interaction; and nanoscale architecture determines how these properties emerge in a device. At FIND Lab, we integrate materials engineering, device physics, nanostructure design, and advanced fabrication to translate these principles into emerging nanoelectronic devices
+                    Materials define functionality; interfaces govern interaction; and nanoscale architecture determines how these properties emerge in a device. At FIND Lab, we integrate materials engineering, device physics, nanostructure design, and advanced fabrication to translate these principles into emerging nanoelectronic devices.
+                  </p>
+                  <p>
+                    We believe that curiosity is the starting point of meaningful research. Fundamental questions—why a material behaves differently at an interface, how a nanoscale structure changes physical phenomena, or what new functionality can emerge from an unconventional architecture—often lead to the most interesting scientific directions. At FIND Lab, curiosity-driven exploration provides the foundation for rigorous research, while scientific understanding guides the development of functional devices.
                   </p>
                 </div>
               </section>
