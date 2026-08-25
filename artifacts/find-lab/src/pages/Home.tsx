@@ -156,7 +156,9 @@ export default function Home() {
             className="rounded-xl border-l-4 border-accent bg-accent/5 px-8 py-7 max-w-3xl mx-auto text-center"
           >
             <p className="text-xl md:text-2xl font-serif italic text-foreground leading-relaxed">
-              “Curiosity begins with a question. Research transforms questions into understanding. Understanding becomes innovation.”
+              <span className="block">“Curiosity begins with a question.</span>
+              <span className="block">Research transforms questions into understanding.</span>
+              <span className="block">Understanding becomes innovation.”</span>
             </p>
           </motion.div>
         </div>
