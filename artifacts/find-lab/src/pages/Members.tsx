@@ -127,7 +127,7 @@ export default function Members() {
                 <CardContent className="p-6">
                   <h3 className="font-serif font-bold text-lg">Akshay S.</h3>
                   <p className="text-primary text-sm font-medium mb-2">PhD Student</p>
-                  <p className="text-muted-foreground text-sm">Joining Fall 2026</p>
+                  <p className="text-muted-foreground text-sm">Fall 2026</p>
                 </CardContent>
               </Card>
             </motion.div>
