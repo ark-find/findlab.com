@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, GraduationCap, Award, Users, UserPlus, Phone } from "lucide-react";
+import { Mail, MapPin, GraduationCap, Award, Users, Phone } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -117,8 +117,12 @@ export default function Members() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <Card className="overflow-hidden border-border/50 bg-card hover:border-primary/50 transition-colors h-full">
-                <div className="aspect-square bg-muted flex items-center justify-center">
-                  <span className="text-4xl font-serif text-muted-foreground/30">AS</span>
+                <div className="aspect-square bg-muted overflow-hidden">
+                  <img
+                    src="/images/akshay-headshot.png"
+                    alt="Akshay S."
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="font-serif font-bold text-lg">Akshay S.</h3>
@@ -128,59 +132,7 @@ export default function Members() {
               </Card>
             </motion.div>
 
-            {/* Open position card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Link href="/join" className="block h-full group">
-                <Card className="overflow-hidden border-dashed border-2 border-accent/40 bg-accent/5 hover:border-accent hover:bg-accent/10 transition-all h-full cursor-pointer">
-                  <div className="aspect-square flex flex-col items-center justify-center gap-3">
-                    <UserPlus className="w-10 h-10 text-accent/50 group-hover:text-accent transition-colors" />
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-serif font-bold text-lg text-foreground">You?</h3>
-                    <p className="text-accent text-sm font-medium mb-2">Open Position</p>
-                    <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors">
-                      We're recruiting — apply now →
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            </motion.div>
           </div>
-        </section>
-
-        {/* ── Open Positions ── */}
-        <section>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-10 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 p-8 opacity-10">
-              <UserPlus size={100} />
-            </div>
-
-            <h2 className="text-2xl font-serif font-semibold mb-4 text-foreground relative z-10">
-              Open Positions
-            </h2>
-            <div className="space-y-4 mb-8 relative z-10 text-muted-foreground">
-              <p className="font-medium text-foreground">The FIND Lab is actively recruiting motivated PhD and Master's students.</p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>PhD positions available (Fall 2026 onwards)</li>
-                <li>Master's student positions available</li>
-              </ul>
-            </div>
-
-            <Button asChild size="lg" className="relative z-10 bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link href="/join">Apply Now</Link>
-            </Button>
-          </motion.div>
         </section>
 
       </div>
