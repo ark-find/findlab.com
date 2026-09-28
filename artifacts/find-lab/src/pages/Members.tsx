@@ -95,7 +95,7 @@ export default function Members() {
           </div>
         </motion.div>
 
-        {/* ── Current Members ── */}
+        {/* ── Doctoral Researchers ── */}
         <section className="mb-20">
           <div className="w-full h-px bg-border/60 mb-12"></div>
 
@@ -106,7 +106,7 @@ export default function Members() {
             transition={{ duration: 0.5 }}
             className="text-2xl font-serif font-semibold mb-8 flex items-center gap-3"
           >
-            <Users className="text-primary" /> Current Members
+            <Users className="text-primary" /> Doctoral Researchers
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -153,6 +153,43 @@ export default function Members() {
                   </CardContent>
                 </Card>
               </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ── Master's Researchers ── */}
+        <section className="mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-serif font-semibold mb-8 flex items-center gap-3"
+          >
+            <Users className="text-primary" /> Master's Researchers
+          </motion.h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Card className="overflow-hidden border-border/50 bg-card hover:border-primary/50 transition-colors h-full">
+                <div className="aspect-square bg-muted overflow-hidden">
+                  <img
+                    src="/images/sruthi-headshot.png"
+                    alt="Sruthi Priya Suresh Babu"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="font-serif font-bold text-lg">Sruthi Priya Suresh Babu</h3>
+                  <p className="text-primary text-sm font-medium mb-2">Master's Student</p>
+                  <p className="text-muted-foreground text-sm">Fall 2026 (Co-Supervision)</p>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
         </section>
