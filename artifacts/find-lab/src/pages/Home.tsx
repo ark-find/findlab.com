@@ -304,7 +304,7 @@ export default function Home() {
                 accent: "#003366",
               },
               {
-                logo: null,
+                logo: "/images/logo-iitk.svg",
                 name: "IIT Kanpur",
                 full: "Indian Institute of Technology Kanpur",
                 country: "India",

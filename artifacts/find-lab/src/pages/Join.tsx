@@ -35,7 +35,7 @@ export default function Join() {
                 <div className="space-y-4">
                   <div className="p-4 bg-background rounded-lg border border-border shadow-sm">
                     <h3 className="font-bold text-lg mb-1">PhD Students</h3>
-                    <p className="text-sm text-muted-foreground">Targeting Spring 2027 and Fall 2027 entry</p>
+                    <p className="text-sm text-muted-foreground">Candidates with prior research experience or a strong academic background in spintronics are particularly encouraged to apply</p>
                   </div>
                   <div className="p-4 bg-background rounded-lg border border-border shadow-sm">
                     <h3 className="font-bold text-lg mb-1">Master's Students</h3>
