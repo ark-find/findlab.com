@@ -217,36 +217,6 @@ export default function Members() {
           </div>
         </section>
 
-        {/* ── Open Positions ── */}
-        <section>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-10 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 p-8 opacity-10">
-              <UserPlus size={100} />
-            </div>
-
-            <h2 className="text-2xl font-serif font-semibold mb-4 text-foreground relative z-10">
-              Open Positions
-            </h2>
-            <div className="space-y-4 mb-8 relative z-10 text-muted-foreground">
-              <p className="font-medium text-foreground">The FIND Lab is actively recruiting motivated PhD and Master's students.</p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>PhD positions available (Fall 2026 onwards)</li>
-                <li>Master's student positions available</li>
-              </ul>
-            </div>
-
-            <Button asChild size="lg" className="relative z-10 bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link href="/join">Apply Now</Link>
-            </Button>
-          </motion.div>
-        </section>
-
       </div>
     </div>
   );
