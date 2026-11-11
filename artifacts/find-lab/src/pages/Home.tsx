@@ -273,7 +273,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               {
                 logo: "/images/logo-itri.svg",
@@ -303,6 +303,13 @@ export default function Home() {
                 country: "India",
                 accent: "#003366",
               },
+              {
+                logo: null,
+                name: "IIT Kanpur",
+                full: "Indian Institute of Technology Kanpur",
+                country: "India",
+                accent: "#1E3A8A",
+              },
             ].map((collab, i) => (
               <motion.div
                 key={i}
@@ -310,11 +317,15 @@ export default function Home() {
                 className="bg-card border border-border/50 rounded-xl p-6 flex flex-col items-center text-center gap-4 hover:shadow-md hover:border-primary/20 transition-all"
               >
                 <div className="w-full h-16 flex items-center justify-center">
-                  <img
-                    src={collab.logo}
-                    alt={`${collab.name} logo`}
-                    className="max-h-14 max-w-[160px] object-contain"
-                  />
+                  {collab.logo ? (
+                    <img
+                      src={collab.logo}
+                      alt={`${collab.name} logo`}
+                      className="max-h-14 max-w-[160px] object-contain"
+                    />
+                  ) : (
+                    <span className="font-serif font-bold text-lg text-primary">{collab.name}</span>
+                  )}
                 </div>
                 <div className="w-12 h-px" style={{ background: collab.accent, opacity: 0.4 }} />
                 <div>
